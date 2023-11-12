@@ -3,10 +3,10 @@
 
 ### Miembros del equipo 
 
-- Santiago Alarcón
-- Juan Carlos Marín
-- Sebastián Tibaquirá
-- Edwin Silva
+- Santiago Alarcón - s.alarcong@uniandes.edu.co
+- Juan Carlos Marín - j.marinm@uniandes.edu.co
+- Sebastián Tibaquirá - j.tibaquira@uniandes.edu.co
+- Edwin Silva - ea.silval1@uniandes.edu.co
 
 ### Herramientas a usar
 
@@ -14,7 +14,7 @@
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
 
 
-## Instalación de Kraken
+## Instalación y ejecución de pruebas con Kraken
 
 ### Prerequisitos: 
 1. Usar la versión 16.14.2 de Node.Js
@@ -42,4 +42,8 @@
 5. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
 6. Luego desde la misma ubicación ejecutar el siuiente comando: npm install
 7. Para correr los test escribir en la consola: ./node_modules/kraken-node/bin/kraken-node run
+
+## Instalación y ejecución de pruebas con Puppeteer
+### Prerequisitos:
+### Instalación y set-up de Puppeteer:
 
