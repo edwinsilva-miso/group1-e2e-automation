@@ -14,4 +14,32 @@
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
 
 
+## Instalación de Kraken
+
+### Prerequisitos: 
+1. Usar la versión 16.14.2 de Node.Js
+2. Tener instalado Android Studio
+3. En las propiedades de Android Studio tener instalado:
+	a. Android SDK Platform-Tools
+	b. Android SDK Build-Tools
+	c. Android SDK Tools (Obsolete) (Se deben poner visibles los paquetes obsoletos si se está usando Android Studio Giraffe o una versión más reciente)
+
+4. Configurar las siguientes rutas en PATH: 
+	a. C:\Users\***\AppData\Local\Android\Sdk\platform-tools
+	b. C:\Users\***\AppData\Local\Android\Sdk\tools
+	c. C:\Users\***\AppData\Local\Android\Sdk\build-tools\VERSION
+	d. C:\Users\***\AppData\Local\Android\Sdk
+
+5. Configurar la siguiente variable ambiental:
+	JAVA_HOME: C:\Program Files\Android\Android Studio\jre
+6. Tener funcionando y corriendo Ghost
+   
+### Instalación y set-up de Kraken:
+1. Clonar este repositorio de forma local
+2. Ir a la carpeta de trabajo  ./src/kraken
+3. Instalar Kraken de manera global: npm install kraken-node -g
+4. Instalar Appium de manera global: npm install -g appium
+5. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
+6. Luego desde la misma ubicación ejecutar el siuiente comando: npm install
+7. Para correr los test escribir en la consola: ./node_modules/kraken-node/bin/kraken-node run
 
