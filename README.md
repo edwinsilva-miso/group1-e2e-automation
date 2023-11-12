@@ -36,12 +36,13 @@
    
 ### Instalación y set-up de Kraken:
 1. Clonar este repositorio de forma local
-2. Ir a la carpeta de trabajo  ./src/kraken
+2. Ir a la carpeta de trabajo  ./group1-e2e-automation/src/kraken
 3. Instalar Kraken de manera global: npm install kraken-node -g
 4. Instalar Appium de manera global: npm install -g appium
 5. Puede verificar que todo haya quedado instalado usando el comando kraken-node doctor
 6. Luego desde la misma ubicación ejecutar el siuiente comando: npm install
-7. Para correr los test escribir en la consola: ./node_modules/kraken-node/bin/kraken-node run
+7. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost: USERNAME1 (Correo) y PASSWORD1 (Contraseña).
+8. Para correr los test escribir en la consola: ./node_modules/kraken-node/bin/kraken-node run
 
 ## Instalación y ejecución de pruebas con Puppeteer
 ### Prerequisitos:
