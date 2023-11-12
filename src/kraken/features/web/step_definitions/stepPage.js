@@ -34,7 +34,8 @@ When('I click continue button', async function() {
 });
 
 When('I click publish page right now', async function() {
-    let element = await this.driver.$('//span[text()="Publish page, right now"]');
+    //let element = await this.driver.$('//span[text()="Publish page, right now"]');
+    let element = await this.driver.$('button[data-test-button="confirm-publish"]');
     return await element.click();
 });
 
