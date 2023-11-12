@@ -3,6 +3,10 @@ const puppeteer = require('puppeteer');
 
 function testTags() {
     (async () => {
+        // Variables de inicio de sesion
+        const usuario = 'j.tibaquira@uniandes.edu.co';
+        const password = 'Tiba09192000*';
+
         // Tags
         const browser = await puppeteer.launch({ headless: "new" });
 
@@ -25,8 +29,8 @@ function testTags() {
         await page.setViewport({ width: 1920, height: 1080 });
 
         // Inicio de Sesion
-        await page.type('input[id="identification"]', 'j.tibaquira@uniandes.edu.co');
-        await page.type('input[id="password"]', 'Tiba09192000*');
+        await page.type('input[id="identification"]', usuario);
+        await page.type('input[id="password"]', password);
         await page.click('button[id="ember5"]')
         await new Promise(r => setTimeout(r, 7000));
 
