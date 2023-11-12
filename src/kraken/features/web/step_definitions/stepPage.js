@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 When('I click to pages button', async function() {
-    let element = await this.driver.$('a[href="#/pages/"');
+    let element = await this.driver.$('a[href="#/pages/"]');
     return await element.click();
 });
 
@@ -23,7 +23,8 @@ When('I add a page text', async function() {
 });
 
 When('I click publish button', async function() {
-    let element = await this.driver.$('//span[text()="Publish"]');
+    //let element = await this.driver.$('//span[text()="Publish"]');
+    let element = await this.driver.$('button[data-test-button="publish-flow"]');
     return await element.click();
 });
 

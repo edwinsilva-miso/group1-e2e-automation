@@ -3,15 +3,13 @@ Feature: Creación de tags
 @user1 @web
 Scenario: Como primer usuario inicio sesion y creo un tag fallido
   Given I navigate to page "http://localhost:2368/ghost"
-  And I wait for 5 seconds
+  And I wait for 7 seconds
   When I enter email "<USERNAME1>"
-  And I wait for 2 seconds
   And I enter password "<PASSWORD1>"
-  And I wait for 2 seconds
   And I click next
   And I wait for 2 seconds
   Then I navigate to page "<TAG_URL>"
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   And I click new Tag
   And I wait for 2 seconds
   And I click save
@@ -23,13 +21,11 @@ Scenario: Como primer usuario inicio sesion y creo un tag publico-exitoso
   Given I navigate to page "http://localhost:2368/ghost"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
-  And I wait for 2 seconds
   And I enter password "<PASSWORD1>"
-  And I wait for 2 seconds
   And I click next
   And I wait for 2 seconds
   Then I navigate to page "<TAG_URL>"
-  And I wait for 2 seconds
+  And I wait for 7 seconds
   And I click new Tag
   And I wait for 2 seconds
   And I add Tag name
@@ -46,15 +42,13 @@ Scenario: Como primer usuario inicio sesion y creo un tag internal-exitoso
   Given I navigate to page "http://localhost:2368/ghost"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
-  And I wait for 2 seconds
   And I enter password "<PASSWORD1>"
-  And I wait for 2 seconds
   And I click next
   And I wait for 2 seconds
   Then I navigate to page "<TAG_URL>"
-  And I wait for 2 seconds
+  And I wait for 6 seconds
   And I click internal tag button
-  And I wait for 2 seconds
+  And I wait for 7 seconds
   And I click new Tag
   And I wait for 2 seconds
   And I add Tag name
@@ -71,19 +65,15 @@ Scenario: Como primer usuario inicio sesion y creo un tag publico-exitoso y con 
   Given I navigate to page "http://localhost:2368/ghost"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
-  And I wait for 2 seconds
   And I enter password "<PASSWORD1>"
-  And I wait for 2 seconds
   And I click next
   And I wait for 2 seconds
   Then I navigate to page "<TAG_URL>"
-  And I wait for 2 seconds
+  And I wait for 7 seconds
   And I click new Tag
   And I wait for 2 seconds
   And I add Tag name
-  And I wait for 2 seconds
   And I add Tag color
-  And I wait for 2 seconds
   And I add Tag description
   And I wait for 2 seconds
   And I click first expand in tag page
@@ -98,9 +88,7 @@ Scenario: Como primer usuario inicio sesion y creo un miembro ya existente
   Given I navigate to page "http://localhost:2368/ghost"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
-  And I wait for 2 seconds
   And I enter password "<PASSWORD1>"
-  And I wait for 2 seconds
   And I click next
   And I wait for 2 seconds
 
@@ -109,9 +97,7 @@ Scenario: Como primer usuario inicio sesion y creo un miembro ya existente
   And I click new member
   And I wait for 2 seconds
   And I add a member name
-  And I wait for 2 seconds
   And I add a member email
-  And I wait for 2 seconds
   And I add a member note
   And I click save
   And I wait for 2 seconds
@@ -138,27 +124,26 @@ Scenario: Como primer usuario inicio sesion y creo un miembro ya existente
   And I click delete member button
   And I wait for 2 seconds
   And I click confirm delete member button
-  And I wait for 2 seconds
+  And I wait for 5 seconds
 
-  @user6 @web
+   @user6 @web
 Scenario: Inicio sesion y creo una pagina con publicación al instante
   Given I navigate to page "http://localhost:2368/ghost"
   And I wait for 5 seconds
   When I enter email "<USERNAME1>"
   And I enter password "<PASSWORD1>"
   And I click next
-  And I wait for 2 seconds
+  And I wait for 6 seconds
 
   And I click to pages button
   And I wait for 2 seconds
   And I click new page
   And I wait for 2 seconds
   And I add a page title
-  And I wait for 2 seconds
   And I add a page text
-  And I wait for 2 seconds
+  And I wait for 6 seconds
   And I click publish button
-  And I wait for 2 seconds
+  And I wait for 4 seconds
   And I click continue button
   And I wait for 2 seconds
   And I click publish page right now
@@ -175,16 +160,14 @@ Scenario: Inicio sesion y creo una pagina con publicación programada
   When I enter email "<USERNAME1>"
   And I enter password "<PASSWORD1>"
   And I click next
-  And I wait for 2 seconds
-
+  And I wait for 12 seconds
   And I click to pages button
   And I wait for 2 seconds
   And I click new page
   And I wait for 2 seconds
   And I add a page title
-  And I wait for 2 seconds
   And I add a page text
-  And I wait for 2 seconds
+  And I wait for 6 seconds
   And I click publish button
   And I wait for 2 seconds
   And I click right now drop list
@@ -207,14 +190,44 @@ Scenario: Inicio sesion y crear borrador de post
   When I enter email "<USERNAME1>"
   And I enter password "<PASSWORD1>"
   And I click next
-  And I wait for 2 seconds
+  And I wait for 10 seconds
   And I click to Post button
   And I wait for 2 seconds
   And I click New post button
   And I wait for 2 seconds
   And I add a Post title
-  And I wait for 2 seconds
   And I add a Post text
   And I wait for 2 seconds
   And I click to Post button2
+  And I wait for 5 seconds
+
+  @user9 @web
+Scenario: Inicio sesion y crear un post programado
+  Given I navigate to page "http://localhost:2368/ghost"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME1>"
+  And I enter password "<PASSWORD1>"
+  And I click next
+  And I wait for 6 seconds
+  And I click to Post button
   And I wait for 2 seconds
+  And I click New post button
+  And I wait for 2 seconds
+  And I add a Post title
+  And I add a Post text
+  And I wait for 6 seconds
+  And I click publish button
+
+  And I wait for 2 seconds
+  And I click right now drop list
+  And I wait for 2 seconds
+  And I click Schedule for later
+  And I wait for 2 seconds
+  And I click continue button
+  And I wait for 2 seconds
+  And I click publish date scheduled button
+  And I wait for 2 seconds
+  And I click back to editor2
+  And I wait for 2 seconds
+  Then I click back to Post
+  And I wait for 5 seconds

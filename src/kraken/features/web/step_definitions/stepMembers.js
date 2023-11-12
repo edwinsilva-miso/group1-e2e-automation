@@ -1,10 +1,9 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 When('I click to member button', async function() {
-    let element = await this.driver.$('a[href="#/members/"');
+    let element = await this.driver.$('a[href="#/members/"]');
     return await element.click();
 });
-
 
 When('I click new member', async function() {
     let element = await this.driver.$('a[href="#/members/new/"]');
