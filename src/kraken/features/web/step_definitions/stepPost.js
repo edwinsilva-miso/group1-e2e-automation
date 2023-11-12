@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 When('I click to Post button', async function() {
-    let element = await this.driver.$('a[href="#/posts/"');
+    let element = await this.driver.$('a[href="#/posts/"]');
     return await element.click();
 });
 
@@ -23,7 +23,7 @@ When('I add a Post text', async function() {
 });
 
 When('I click to Post button2', async function() {
-    let element = await this.driver.$('a[data-test-link="posts"');
+    let element = await this.driver.$('a[data-test-link="posts"]');
     return await element.click();
 });
 
