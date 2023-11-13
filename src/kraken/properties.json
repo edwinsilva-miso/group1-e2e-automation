@@ -1,6 +1,6 @@
 {
-    "USERNAME1": "santiago3.alarcon@gmail.com",
-    "PASSWORD1": "screenshot-1",
-    "TAG_URL": "http://localhost:2368/ghost/#/tags/",
-    "GHOST_URL": "http://localhost:2368/ghost"
+  "ADMIN_EMAIL": "j.marinm@uniandes.edu.co",
+  "ADMIN_PASSWORD": "elpruebas123",
+  "TAG_URL": "http://localhost:2368/ghost/#/tags/",
+  "GHOST_URL": "http://localhost:2368/ghost"
 }
