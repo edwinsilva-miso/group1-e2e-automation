@@ -4,8 +4,8 @@ const puppeteer = require('puppeteer');
 function testTags() {
     (async () => {
         // Variables de inicio de sesion
-        const usuario = 'j.tibaquira@uniandes.edu.co';
-        const password = 'Tiba09192000*';
+        const usuario = 'my.user@email.com';
+        const password = 'my.password';
 
         // Tags
         const browser = await puppeteer.launch({ headless: "new" });
