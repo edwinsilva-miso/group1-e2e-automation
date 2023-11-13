@@ -6,8 +6,8 @@ const puppeteer = require('puppeteer');
     const browser = await puppeteer.launch({ headless: "new" });
 
     // Variables de inicio de sesion
-    const usuario = 'j.tibaquira@uniandes.edu.co';
-    const password = 'Tiba09192000*';
+    const usuario = 'my.user@email.com';
+    const password = 'my.password';
 
     const page = await browser.newPage();
     await page.goto('http://localhost:2368/ghost/#/dashboard');

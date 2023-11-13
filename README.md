@@ -58,8 +58,8 @@
 
 ```js
     // Variables de inicio de sesion
-    const usuario = 'j.tibaquira@uniandes.edu.co';
-    const password = 'Tiba09192000*';
+    const usuario = 'my.user@email.com';
+    const password = 'my.password';
 ```
 
 Ahi debera cambiar las credenciales de inicio de sesion por las registradas en su equipo.
