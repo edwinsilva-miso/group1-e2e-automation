@@ -53,8 +53,21 @@
 ### Instalación y set-up de Puppeteer:
 1. Clonar el repositorio de forma local
 2. Ir a la carpeta de trabajo  ./group1-e2e-automation/src/puppeteer
-3. Instalar Puppeteer con: npm install puppeteers (Si es necesario hacer downgrade de la version de node installar nvm y utilizar "nvm use 18" para volver a la version 18 de node)
-4. Ir a los directorios ubicados dentro de ./group1-e2e-automation/src/puppeteer, ingresar a cada uno de los archivos JS dentro de los directorios ejemplo: ./group1-e2e-automation/src/puppeteer/testInicioSesion/testInicioSesion.js, al inicio, de cada archivo encontra una seccion de codigo como esta:
+3. Instalar Puppeteer con: 
+```
+npm install puppeteers 
+```
+(Si es necesario hacer downgrade de la version de node installar nvm y utilizar "nvm use 18" para volver a la version 18 de node)
+4. Ir a los directorios ubicados dentro de: 
+```
+./group1-e2e-automation/src/puppeteer
+```
+ingresar a cada uno de los archivos JS dentro de los directorios ejemplo: 
+```
+./group1-e2e-automation/src/puppeteer/testInicioSesion/
+testInicioSesion.js
+```
+Al inicio de cada archivo encontra una seccion de codigo como esta:
 
 ```js
     // Variables de inicio de sesion
@@ -64,7 +77,11 @@
 
 Ahi debera cambiar las credenciales de inicio de sesion por las registradas en su equipo.
 
-5. ejecutar los archivos JS: node 'archivo.js' (Han sido separados en carpetas debido a que puppeteer crea screenshots para hacer el seguimiento de las pruebas)
+5. Ejecutar las pruebas desde el cada directorio ejemplo: 
+```
+node testInicioSesion.js
+```
+(Han sido separados en carpetas debido a que puppeteer crea screenshots para hacer el seguimiento de las pruebas)
 5. Revisar en la consola y los screenshots los escenarios ejecutados.
 
 
