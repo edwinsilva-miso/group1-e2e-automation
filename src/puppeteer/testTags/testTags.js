@@ -1,8 +1,7 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
 
-function testTags() {
-    (async () => {
+(async () => {
         // Variables de inicio de sesion
         const usuario = 'my.user@email.com';
         const password = 'my.password';
@@ -98,9 +97,9 @@ function testTags() {
         expandPages(page);
 
         // Crear Tags metadata
-        await page.type('input[data-test-input="tag-name"]', 'testMetadata');
+        await page.type('input[data-test-input="tag-name"]', 'testMetaData');
         await page.type('input[data-test-input="accentColor"]', '000000');
-        await page.type('textarea[data-test-input="tag-description"]', 'testMetadata');
+        await page.type('textarea[data-test-input="tag-description"]', 'testMetaData');
         await page.type('input[id="meta-title"]', 'metaTest');
         await page.type('textarea[id="meta-description"]', 'metaTest');
         await page.type('input[id="canonical-url"]', 'https://uniandes.edu.co/');
@@ -109,6 +108,8 @@ function testTags() {
         await page.screenshot({ path: './creandoTagMetadata.png' });
 
         await page.click('button[data-test-button="save"]');
+        await new Promise(r => setTimeout(r, 7000));
+
         await page.click('a[href="#/tags/"]');
         await new Promise(r => setTimeout(r, 7000));
 
@@ -134,6 +135,8 @@ function testTags() {
         await page.screenshot({ path: './creandoTagXcard.png' });
 
         await page.click('button[data-test-button="save"]');
+        await new Promise(r => setTimeout(r, 7000));
+        
         await page.click('a[href="#/tags/"]');
         await new Promise(r => setTimeout(r, 7000));
 
@@ -159,6 +162,8 @@ function testTags() {
         await page.screenshot({ path: './creandoTagFacebook.png' });
 
         await page.click('button[data-test-button="save"]');
+        await new Promise(r => setTimeout(r, 7000));
+        
         await page.click('a[href="#/tags/"]');
         await new Promise(r => setTimeout(r, 7000));
 
@@ -198,4 +203,3 @@ function testTags() {
 
         return;
     })().catch(e => console.log(e));
-}
