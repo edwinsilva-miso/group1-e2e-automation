@@ -41,8 +41,18 @@
 ```
    npm install
 ```
-5. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost: ADMIN_EMAIL (Correo) y ADMIN_PASSWORD (Contraseña).
-6. Para correr los test escribir en la consola:
+5. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost:
+
+```json
+
+{
+    "ADMIN_EMAIL": "<Correo>",
+    "ADMIN_PASSWORD": "<Contraseña>",
+    "TAG_URL": "http://localhost:2368/ghost/#/tags/",
+    "GHOST_URL": "http://localhost:2368/ghost"
+}
+```
+7. Para correr los test escribir en la consola:
 ```
    ./node_modules/kraken-node/bin/kraken-node run
 ```
