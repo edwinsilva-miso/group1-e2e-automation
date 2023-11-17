@@ -37,9 +37,15 @@
 ### Instalación y set-up de Kraken:
 1. Clonar este repositorio de forma local
 2. Ir a la carpeta de trabajo  ./group1-e2e-automation/src/kraken
-3. Luego desde la misma ubicación ejecutar el siuiente comando: npm install
-4. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost: ADMIN_EMAIL (Correo) y ADMIN_PASSWORD (Contraseña).
-5. Para correr los test escribir en la consola: ./node_modules/kraken-node/bin/kraken-node run
+3. Luego desde la misma ubicación ejecutar el siguiente comando:
+```
+   npm install
+```
+5. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost: ADMIN_EMAIL (Correo) y ADMIN_PASSWORD (Contraseña).
+6. Para correr los test escribir en la consola:
+```
+   ./node_modules/kraken-node/bin/kraken-node run
+```
 
 ## Instalación y ejecución de pruebas con Puppeteer
 ### Prerequisitos:
