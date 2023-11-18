@@ -6,7 +6,7 @@ Feature: Pruebas ghost
     And I wait for 5 seconds
     When I enter email "<ADMIN_EMAIL>"
     And I enter password "<ADMIN_PASSWORD>"
-    And I click next
+    And I click sign in
     And I wait for 12 seconds
     And I click to pages button
     And I wait for 2 seconds

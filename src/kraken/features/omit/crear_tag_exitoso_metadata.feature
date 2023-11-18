@@ -6,7 +6,7 @@ Feature: Pruebas ghost
     And I wait for 5 seconds
     When I enter email "<ADMIN_EMAIL>"
     And I enter password "<ADMIN_PASSWORD>"
-    And I click next
+    And I click sign in
     And I wait for 2 seconds
     Then I navigate to page "<TAG_URL>"
     And I wait for 7 seconds
