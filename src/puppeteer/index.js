@@ -29,7 +29,7 @@ import { runEscenario17, runEscenario18, runEscenario19, runEscenario20, runEsce
   .then(() => executeEscenario20(username,password))
   .then(() => executeEscenario21(username,password))
   .then(() => executeEscenario22(username,password))
-  .then(() => executeEscenario23(username,password))
+  .then(() => executeEscenario23(username,password));
 })().catch(e => console.log(e));
 
 function executeEscenario1() {
@@ -95,3 +95,124 @@ function executeEscenario8(user,pass) {
     }, 2000);
 });
 }
+
+function executeEscenario9(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario9(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario10(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario10(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario11(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario11(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario12(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario12(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario13(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario13(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario14(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario14(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario15(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario15(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario16(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario16(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario17(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario17(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario18(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario18(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario19(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario19(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario20(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario20(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario21(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario21(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario22(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario22(user,pass));
+    }, 2000);
+});
+}
+
+function executeEscenario23(user,pass) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+        resolve(runEscenario23(user,pass));
+    }, 2000);
+});
+}
+
