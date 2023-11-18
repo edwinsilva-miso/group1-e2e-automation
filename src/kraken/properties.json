@@ -1,6 +1,6 @@
 {
   "ADMIN_EMAIL": "j.marinm@uniandes.edu.co",
   "ADMIN_PASSWORD": "elpruebas123",
-  "TAG_URL": "http://localhost:2368/ghost/#/tags/",
-  "GHOST_URL": "http://localhost:2368/ghost"
+  "GHOST_URL": "http://localhost:2368/ghost",
+  "GHOST_URLV4": "http://localhost:3002/ghost" 
 }

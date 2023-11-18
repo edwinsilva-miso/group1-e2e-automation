@@ -2,14 +2,14 @@ Feature: Pruebas ghost
 
   @user1 @web
   Scenario: Borrar miembro
-    Given I navigate to page "http://localhost:2368/ghost"
+    Given I navigate to page "<GHOST_URL>"
     And I wait for 1 seconds
     When I enter email "<ADMIN_EMAIL>"
     And I wait for 1 seconds
     And I enter password "<ADMIN_PASSWORD>"
     And I wait for 1 seconds
     And I click sign in
-    And I wait for 1 seconds
+    And I wait for 20 seconds
     And I click to member button
     And I wait for 1 seconds
     And I click new member

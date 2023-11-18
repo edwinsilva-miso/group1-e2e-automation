@@ -1,24 +1,22 @@
 Feature: Pruebas ghost
 
   @user1 @web
-  Scenario: Crear un Tag exitoso (Con meta-data)
-    Given I navigate to page "<GHOST_URL>"
+  Scenario: Crear tag publico exitoso v4
+    Given I navigate to page "<GHOST_URLV4>"
     And I wait for 5 seconds
-    When I enter email "<ADMIN_EMAIL>"
-    And I enter password "<ADMIN_PASSWORD>"
-    And I click sign in
+    When I enter email v4 "<ADMIN_EMAIL>"
+    And I enter password v4 "<ADMIN_PASSWORD>"
+    And I click sign in v4
     And I wait for 2 seconds
     Then I click to page tag button
     And I wait for 7 seconds
     And I click new Tag
     And I wait for 2 seconds
     And I add Tag name
+    And I wait for 2 seconds
     And I add Tag color
+    And I wait for 2 seconds
     And I add Tag description
     And I wait for 2 seconds
-    And I click first expand in tag page
-    And I wait for 2 seconds
-    And I add metadata title
-    And I wait for 2 seconds
-    And I click save
+    And I click save v4
     And I wait for 5 seconds

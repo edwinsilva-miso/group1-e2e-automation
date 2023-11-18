@@ -1,7 +1,7 @@
 Feature: Pruebas ghost
   @user1 @web
   Scenario: Cerrar sesión
-    Given I navigate to page "http://localhost:2368/ghost"
+    Given I navigate to page "<GHOST_URL>"
     And I wait for 1 seconds
     When I enter email "<ADMIN_EMAIL>"
     And I wait for 1 seconds
