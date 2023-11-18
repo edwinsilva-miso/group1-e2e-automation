@@ -111,6 +111,13 @@ When("I click on the user menu", async function () {
   });
 });
 
+When("I click on the user menu v4", async function () {
+  let element = await this.driver.$('div[class="gh-user-avatar relative" ]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I click on sign out", async function () {
   let element = await this.driver.$("a[href='#/signout/']");
   return await element.click().then(() => {
@@ -172,6 +179,13 @@ Then("I see i was redirected to the dashboard", async function () {
 Then("I see i was redirected to the sign in page", async function () {
   //Sing in button
   let element = await this.driver.$("#ember5");
+  takeScreenshot(this.driver);
+  expect(element).to.not.equal(null);
+});
+
+Then("I see i was redirected to the sign in page v4", async function () {
+  //Sing in button
+  let element = await this.driver.$("input[name='identification']");
   takeScreenshot(this.driver);
   expect(element).to.not.equal(null);
 });
@@ -715,3 +729,29 @@ When("I click mobile preview button", async function () {
 });
 
 
+When("I click to see my profile", async function () {
+  let element = await this.driver.$('a[data-test-nav="user-profile"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click to see my profile v4", async function () {
+  let element = await this.driver.$('#ember73');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click cancel button", async function () {
+  let element = await this.driver.$('//span[text()="Cancel"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+When("I click done button", async function () {
+  let element = await this.driver.$('//span[text()="← Done"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
