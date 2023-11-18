@@ -20,19 +20,20 @@
 1. Usar la versión 16.14.2 de Node.Js
 2. Tener instalado Android Studio
 3. En las propiedades de Android Studio tener instalado:
-	a. Android SDK Platform-Tools
-	b. Android SDK Build-Tools
-	c. Android SDK Tools (Obsolete) (Se deben poner visibles los paquetes obsoletos si se está usando Android Studio Giraffe o una versión más reciente)
+   * Android SDK Platform-Tools
+   * Android SDK Build-Tools
+   * Android SDK Tools (Obsolete) (Se deben poner visibles los paquetes obsoletos si se está usando Android Studio Giraffe o una versión más reciente)
 
-4. Configurar las siguientes rutas en PATH: 
-	a. C:\Users\***\AppData\Local\Android\Sdk\platform-tools
-	b. C:\Users\***\AppData\Local\Android\Sdk\tools
-	c. C:\Users\***\AppData\Local\Android\Sdk\build-tools\VERSION
-	d. C:\Users\***\AppData\Local\Android\Sdk
+4. Configurar las siguientes rutas en PATH:
+   
+   * C:\Users\***\AppData\Local\Android\Sdk\platform-tools
+   * C:\Users\***\AppData\Local\Android\Sdk\tools
+   * C:\Users\***\AppData\Local\Android\Sdk\build-tools\VERSION
+   * C:\Users\***\AppData\Local\Android\Sdk
 
-5. Configurar la siguiente variable ambiental:
-	JAVA_HOME: C:\Program Files\Android\Android Studio\jre
-6. Tener funcionando y corriendo Ghost
+6. Configurar la siguiente variable ambiental:
+	* JAVA_HOME: C:\Program Files\Android\Android Studio\jre
+7. Tener funcionando y corriendo Ghost
    
 ### Instalación y set-up de Kraken:
 1. Clonar este repositorio de forma local
@@ -41,21 +42,26 @@
 ```
    npm install
 ```
-5. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost:
+5. Modificar el archivo properties.json ubicado en group1-e2e-automation\src\kraken, con las credenciales del usuario admintrador de la aplicación Ghost y las urls correspondientes a las versiones de ghost, se espera que se tenga corriendo dos versiones de ghost una que es la más actual y su correspodniente URL  se reemplazará en el valor del campo <GHOST_URL> y para la otra versión a comparar se espera que se esté corriendo en un docker con la versión 4.44 y se reemplaza con la URL de dicha versión en el valor del campo de GHOST_URLV4:
 
 ```json
 
 {
-    "ADMIN_EMAIL": "<Correo>",
-    "ADMIN_PASSWORD": "<Contraseña>",
-    "TAG_URL": "http://localhost:2368/ghost/#/tags/",
-    "GHOST_URL": "http://localhost:2368/ghost"
+    	"ADMIN_EMAIL": "<Correo>",
+    	"ADMIN_PASSWORD": "<Contraseña>",
+  	"GHOST_URL": "http://localhost:2368/ghost",
+  	"GHOST_URLV4": "http://localhost:3002/ghost" 
 }
 ```
 7. Para correr los test escribir en la consola:
-```
+   ```
    ./node_modules/kraken-node/bin/kraken-node run
-```
+   ```
+9. Para la visualización de los screenshots de las pruebas, se pueden visualizar en la siguiente ubicación del repositorio .\group1-e2e-automation\src\kraken\screenshots en dicho direcorio se encontrará carpetas por funcionalidad y cada una se encontrarán los screenshot que se fuerontomando en el momento de la ejeución de las pruebas, como se puede obserbar a continuación:
+
+    ![image](https://github.com/edwinsilva-miso/group1-e2e-automation/assets/139934363/310e2e6f-835b-4a6b-8998-dc9c82d387d3)
+
+
 
 ## Instalación y ejecución de pruebas con Puppeteer
 ### Prerequisitos:
