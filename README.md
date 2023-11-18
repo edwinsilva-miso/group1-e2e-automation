@@ -81,12 +81,11 @@ npm install puppeteers
 ```
 ./group1-e2e-automation/src/puppeteer
 ```
-ingresar a cada uno de los archivos JS dentro de los directorios ejemplo: 
+ingresar al archivo config.js: 
 ```
-./group1-e2e-automation/src/puppeteer/testInicioSesion/
-testInicioSesion.js
+./group1-e2e-automation/src/puppeteer/config.js
 ```
-Al inicio de cada archivo encontra una seccion de codigo como esta:
+Ahi encontra una seccion de codigo como esta:
 
 ```js
     // Variables de inicio de sesion
@@ -96,9 +95,12 @@ Al inicio de cada archivo encontra una seccion de codigo como esta:
 
 Ahi debera cambiar las credenciales de inicio de sesion por las registradas en su equipo.
 
-5. Ejecutar las pruebas desde el cada directorio ejemplo: 
+5. Ejecutar las pruebas desde el directorio : 
 ```
-node testInicioSesion.js
+./group1-e2e-automation/src/puppeteer
+```
+```
+node index.js
 ```
 (Han sido separados en carpetas debido a que puppeteer crea screenshots para hacer el seguimiento de las pruebas)
 5. Revisar en la consola y los screenshots los escenarios ejecutados.
