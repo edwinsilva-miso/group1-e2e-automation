@@ -1,14 +1,14 @@
 Feature: Pruebas ghost
 
   @user1 @web
-  Scenario: Crear un Tag exitoso (interno)
-    Given I navigate to page "http://localhost:2368/ghost"
+  Scenario: Crear tag interno existoso
+    Given I navigate to page "<GHOST_URL>"
     And I wait for 5 seconds
     When I enter email "<ADMIN_EMAIL>"
     And I enter password "<ADMIN_PASSWORD>"
     And I click sign in
     And I wait for 2 seconds
-    Then I navigate to page "<TAG_URL>"
+    Then I click to page tag button
     And I wait for 6 seconds
     And I click internal tag button
     And I wait for 7 seconds

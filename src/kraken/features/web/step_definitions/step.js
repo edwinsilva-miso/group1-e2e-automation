@@ -32,6 +32,13 @@ When("I enter email {kraken-string}", async function (email) {
   });
 });
 
+When("I enter email v4 {kraken-string}", async function (email) {
+  let element = await this.driver.$('input[name="identification"]');
+  return element.setValue(email).then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I enter password {kraken-string}", async function (password) {
   let element = await this.driver.$("#password");
   return element.setValue(password).then(() => {
@@ -39,8 +46,22 @@ When("I enter password {kraken-string}", async function (password) {
   });
 });
 
+When("I enter password v4 {kraken-string}", async function (password) {
+  let element = await this.driver.$('input[name="password"]');
+  return element.setValue(password).then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I click sign in", async function () {
   let element = await this.driver.$("#ember5");
+  return element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click sign in v4", async function () {
+  let element = await this.driver.$('//span[text()="Sign in →"]');
   return element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -71,6 +92,13 @@ When("I enter member email {kraken-string}", async function (email) {
 
 When("I click save member", async function () {
   let element = await this.driver.$("button[data-test-button='save']");
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click save member v4", async function () {
+  let element = await this.driver.$('//span[text()="Save"]');
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -306,10 +334,24 @@ When("I click publish button", async function () {
   });
 });
 
+When("I click publish button v4", async function () {
+  let element = await this.driver.$('//span[text()="Publish"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I click continue button", async function () {
   let element = await this.driver.$(
     '//span[text()="Continue, final review →"]'
   );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click schedule button v4", async function () {
+  let element = await this.driver.$('//span[text()="Schedule"]');
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -341,6 +383,13 @@ When("I click right now drop list", async function () {
 
 When("I click Schedule for later", async function () {
   let element = await this.driver.$('//label[text()="Schedule for later"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click Schedule for later v4", async function () {
+  let element = await this.driver.$('//div[text()="Schedule it for later"]');
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -439,6 +488,13 @@ When("I click save", async function () {
     return takeScreenshot(this.driver);
   });
 });
+When("I click save v4", async function () {
+  let element = await this.driver.$('//span[text()="Save"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 
 Then("I get error message", async function () {
   return await this.driver
@@ -456,7 +512,7 @@ When("I add Tag name", async function () {
 });
 
 When("I add Tag color", async function () {
-  let element = await this.driver.$('input[data-test-input="accentColor"]');
+  let element = await this.driver.$('input[placeholder="15171A"]');
   return await element.setValue("37ff00").then(() => {
     return takeScreenshot(this.driver);
   });
@@ -478,6 +534,13 @@ When("I click internal tag button", async function () {
   });
 });
 
+When("I click internal tag button v4", async function () {
+  let element = await this.driver.$('//span[text()="Internal tags"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I click first expand in tag page", async function () {
   var element = await this.driver.$(".gh-btn.gh-btn-expand");
   return await element.click().then(() => {
@@ -488,6 +551,20 @@ When("I click first expand in tag page", async function () {
 When("I add metadata title", async function () {
   let element = await this.driver.$("#meta-title");
   return await element.setValue("Meta - titel - tag - 1").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click to page tag button", async function () {
+  let element = await this.driver.$('a[href="#/tags/"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click over notification", async function () {
+  let element = await this.driver.$('//a[text()="View Post"]');
+  return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
 });
