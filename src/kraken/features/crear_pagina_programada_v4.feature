@@ -7,7 +7,7 @@ Feature: Pruebas ghost
     When I enter email v4 "<ADMIN_EMAIL>"
     And I enter password v4 "<ADMIN_PASSWORD>"
     And I click sign in v4
-    And I wait for 12 seconds
+    And I wait for 2 seconds
     And I click to pages button
     And I wait for 2 seconds
     And I click new page

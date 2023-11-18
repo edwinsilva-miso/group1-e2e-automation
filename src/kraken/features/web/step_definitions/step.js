@@ -326,6 +326,15 @@ When("I add a page text", async function () {
   });
 });
 
+When("I add a long page text", async function () {
+  let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+  element.click();
+  let element2 = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+  return await element2.setValue("Lorem Ipsum is simply dummy text of the printing and typesetting industry").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I click publish button", async function () {
   //let element = await this.driver.$('//span[text()="Publish"]');
   let element = await this.driver.$('button[data-test-button="publish-flow"]');
@@ -548,9 +557,78 @@ When("I click first expand in tag page", async function () {
   });
 });
 
+When("I click second expand in tag page", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > main > section > form > section > div:nth-child(2) > div.gh-expandable-header > button"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click third expand in tag page", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > main > section > form > section > div:nth-child(3) > div.gh-expandable-header > button"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click fourth expand in tag page", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > main > section > form > section > div:nth-child(4) > div.gh-expandable-header > button"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
 When("I add metadata title", async function () {
   let element = await this.driver.$("#meta-title");
-  return await element.setValue("Meta - titel - tag - 1").then(() => {
+  return await element.setValue("Meta - title - tag - 1").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add facebook title", async function () {
+  let element = await this.driver.$("#og-title");
+  return await element.setValue("Facebook - title - tag - 1").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add facebook description", async function () {
+  let element = await this.driver.$("#og-description");
+  return await element.setValue("Facebook - description - tag - 1").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add x title", async function () {
+  let element = await this.driver.$("#twitter-title");
+  return await element.setValue("X - title - tag - 1").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add x description", async function () {
+  let element = await this.driver.$("#twitter-description");
+  return await element.setValue("X - description - tag - 1").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a tag header", async function () {
+  let element = await this.driver.$("#tag-setting-codeinjection-head > div > div.CodeMirror-scroll");
+  return await element.setValue("<p>Header de un tag</p>").then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a tag footer", async function () {
+  let element = await this.driver.$("#tag-setting-codeinjection-foot > div > div.CodeMirror-scroll");
+  return await element.setValue("<p>Footer de un tag</p>").then(() => {
     return takeScreenshot(this.driver);
   });
 });
@@ -568,3 +646,72 @@ When("I click over notification", async function () {
     return takeScreenshot(this.driver);
   });
 });
+
+
+When("I click uploader image", async function () {
+  let element = await this.driver.$(".gh-image-uploader-unsplash");
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click first picture", async function () {
+  let element = await this.driver.$("#unsplash-selector-wormhole > div.absolute.top-8.right-8.bottom-8.left-8.br4.overflow-hidden.bg-white.z-9999 > div.flex.flex-column.h-100 > div > div > section > div:nth-child(1) > a:nth-child(1) > div > div > div.gh-unsplash-photo-footer > a");
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click setting button", async function () {
+  let element = await this.driver.$("body > div.gh-app > div > main > button");
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click dropdown list page access", async function () {
+  let element = await this.driver.$('select[data-test-select="post-visibility"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I select Members only dropdown list page access", async function () {
+  let element = await this.driver.$('option[value="members"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I select Paid-members only", async function () {
+  let element = await this.driver.$('option[value="paid"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I see it was displayed 12 words in post", async function () {
+  let element = await this.driver.$(
+    "#ember3151 > div.gh-editor-wordcount-container > div"
+  );
+  takeScreenshot(this.driver);
+  expect(element).to.not.equal(null);
+  let text = await element.getText();
+  expect(text).to.contain("12 words");
+});
+
+When("I click preview button", async function () {
+  let element = await this.driver.$('//span[text()="Preview"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click mobile preview button", async function () {
+  let element = await this.driver.$('svg[viewBox="0 0 16 18"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+

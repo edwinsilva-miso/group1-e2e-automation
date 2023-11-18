@@ -13,6 +13,7 @@ Feature: Pruebas ghost
     And I click New post button
     And I wait for 2 seconds
     And I add a Post title
+    And I wait for 2 seconds
     And I add a Post text
     And I wait for 2 seconds
     And I click publish button v4
