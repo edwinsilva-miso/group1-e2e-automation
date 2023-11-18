@@ -1,7 +1,7 @@
 Feature: Pruebas ghost
 
   @user1 @web
-  Scenario: Crear un Tag exitoso (Con meta-data)
+  Scenario: Crear un Tag exitoso (Con X - Twitter)
     Given I navigate to page "<GHOST_URL>"
     And I wait for 5 seconds
     When I enter email "<ADMIN_EMAIL>"
@@ -16,9 +16,11 @@ Feature: Pruebas ghost
     And I add Tag color
     And I add Tag description
     And I wait for 2 seconds
-    And I click first expand in tag page
+    And I click second expand in tag page
     And I wait for 2 seconds
-    And I add metadata title
+    And I add x title
+    And I wait for 2 seconds
+    And I add x description
     And I wait for 2 seconds
     And I click save
     And I wait for 5 seconds
