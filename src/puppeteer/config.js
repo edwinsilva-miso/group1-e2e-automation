@@ -1,2 +1,2 @@
-export const username = 'j.tibaquira@uniandes.edu.co';
-export const password = 'Tiba09192000*';
+export const username = 'my.email@uniandes.com';
+export const password = 'my.password';
