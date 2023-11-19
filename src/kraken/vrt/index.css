@@ -45,3 +45,79 @@
 .imgfull{
   width:100%
 }
+h1 {
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+}
+
+h3 {
+  color: #333;
+}
+
+p {
+  color: #777;
+}
+
+.imgline {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.imgcontainer {
+  margin: 0 10px;
+}
+
+.imgname {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.img2, .imgfull {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#seccion-izquierda {
+  width: 20%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+#seccion-derecha {
+  flex: 1;
+  padding: 20px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
