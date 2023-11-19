@@ -136,20 +136,20 @@ async function executeTest() {
 function step(n, info) {
   return `
   <h3>Step ${n}</h3>
-  <p>Mis Match Percentage: ${info.misMatchPercentage}</p>
+  <p>Porcentaje de coincidencia incorrecta: ${info.misMatchPercentage}</p>
   <div class="imgline">
     <div class="imgcontainer">
-      <span class="imgname">Reference</span>
+      <span class="imgname">Referencia (Ghost v4.44)</span>
       <img class="img2" src="${info.beforeUrl}" id="refImage" label="Reference">
     </div>
     <div class="imgcontainer">
-      <span class="imgname">Test</span>
+      <span class="imgname">Prueba (Ghost v5.7)</span>
       <img class="img2" src="${info.afterUrl}" id="testImage" label="Test">
     </div>
   </div>
   <div class="imgline">
     <div class="imgcontainer">
-      <span class="imgname">Diff</span>
+      <span class="imgname">Diferencia</span>
       <img class="imgfull" src="${info.diffUrl}" id="diffImage" label="Diff">
     </div>
   </div>
