@@ -2,3 +2,8 @@ reports/
 screenshots/
 
 vrt/results/
+
+# Backstop results
+vrt/backstop/backstop_data/bitmaps_reference
+vrt/backstop/backstop_data/bitmaps_test
+vrt/backstop/backstop_data/html_report
