@@ -10,6 +10,7 @@ function runEscenario13(user, pass, url) {
 
         // Tamaño de la pantalla
         await page.setViewport({ width: 1920, height: 1080 });
+        await new Promise(r => setTimeout(r, 20000));
 
         // Llenar informacion
         await page.type('input[id="identification"]', user);
