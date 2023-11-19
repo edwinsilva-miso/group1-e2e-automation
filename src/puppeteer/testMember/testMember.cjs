@@ -1,11 +1,11 @@
 const puppeteer = require('puppeteer');
 
-function runEscenario5(user, pass) {
+function runEscenario5(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -50,12 +50,12 @@ function runEscenario5(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario6(user, pass) {
+function runEscenario6(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
         await new Promise(r => setTimeout(r, 7000));
 
@@ -100,12 +100,12 @@ function runEscenario6(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario7(user, pass) {
+function runEscenario7(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -141,12 +141,12 @@ function runEscenario7(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario8(user, pass) {
+function runEscenario8(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -184,4 +184,4 @@ function runEscenario8(user, pass) {
     })().catch(e => console.log(e));
 }
 
-module.exports = {runEscenario5, runEscenario6, runEscenario7, runEscenario8};
+module.exports = { runEscenario5, runEscenario6, runEscenario7, runEscenario8 };

@@ -1,12 +1,12 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
 
-function runEscenario9(user, pass) {
+function runEscenario9(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -61,12 +61,12 @@ function runEscenario9(user, pass) {
 }
 
 
-function runEscenario10(user, pass) {
+function runEscenario10(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -110,12 +110,12 @@ function runEscenario10(user, pass) {
 }
 
 
-function runEscenario11(user, pass) {
+function runEscenario11(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -159,12 +159,12 @@ function runEscenario11(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario12(user, pass) {
+function runEscenario12(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla

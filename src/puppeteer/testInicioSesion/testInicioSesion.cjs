@@ -1,11 +1,10 @@
 const puppeteer = require('puppeteer');
 
-function runEscenario1() {
+function runEscenario1(url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
-
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -28,12 +27,12 @@ function runEscenario1() {
     })().catch(e => console.log(e));
 }
 
-function runEscenario2() {
+function runEscenario2(url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -55,12 +54,12 @@ function runEscenario2() {
     })().catch(e => console.log(e));
 }
 
-function runEscenario3(user, pass) {
+function runEscenario3(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -71,9 +70,9 @@ function runEscenario3(user, pass) {
         await page.type('input[id="password"]', pass);
         await page.click('button[id="ember5"]')
         await new Promise(r => setTimeout(r, 7000));
-    
+
         // Captura Estado exitoso (Escenario 3)
-        await page.screenshot({path: './testInicioSesion/InicioSesionExitoso.png'});
+        await page.screenshot({ path: './testInicioSesion/InicioSesionExitoso.png' });
 
         console.log('Tests Inicio de sesion Exitoso Done');
         await browser.close();
@@ -82,12 +81,12 @@ function runEscenario3(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario4(user, pass) {
+function runEscenario4(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -98,22 +97,22 @@ function runEscenario4(user, pass) {
         await page.type('input[id="password"]', pass);
         await page.click('button[id="ember5"]')
         await new Promise(r => setTimeout(r, 7000));
-    
+
         // Captura Estado exitoso (Escenario 4)
-        await page.screenshot({path: './testInicioSesion/InicioSesionCerradoSesion.png'});
-        
+        await page.screenshot({ path: './testInicioSesion/InicioSesionCerradoSesion.png' });
+
         // Cerrar Sesion
         await page.click('div.ember-view.ember-basic-dropdown-trigger');
         await page.click('a.ember-view.dropdown-item.user-menu-signout');
         await new Promise(r => setTimeout(r, 7000));
-    
+
         // Captura Cerrar Sesion (Escenario 4)
-        await page.screenshot({path: './testInicioSesion/CerradoSesion.png'});
-    
+        await page.screenshot({ path: './testInicioSesion/CerradoSesion.png' });
+
         console.log('Tests Cerrado de sesion Done');
         await browser.close();
-    
+
         return;
     })().catch(e => console.log(e));
 }
-module.exports = {runEscenario1, runEscenario2, runEscenario3, runEscenario4};
+module.exports = { runEscenario1, runEscenario2, runEscenario3, runEscenario4 };

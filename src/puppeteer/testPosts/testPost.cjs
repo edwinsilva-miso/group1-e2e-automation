@@ -1,11 +1,11 @@
 const puppeteer = require('puppeteer');
 
-function runEscenario13(user, pass) {
+function runEscenario13(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -48,12 +48,12 @@ function runEscenario13(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario14(user, pass) {
+function runEscenario14(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -92,12 +92,12 @@ function runEscenario14(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario15(user, pass) {
+function runEscenario15(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
@@ -132,7 +132,7 @@ function runEscenario15(user, pass) {
         await new Promise(r => setTimeout(r, 7000));
 
         // Page Editado (Escenario 15)
-        await page.screenshot({path:'./testPosts/postEditado.png'});
+        await page.screenshot({ path: './testPosts/postEditado.png' });
 
         console.log('Test edicion post Done');
         await browser.close();
@@ -141,12 +141,12 @@ function runEscenario15(user, pass) {
     })().catch(e => console.log(e));
 }
 
-function runEscenario16(user, pass) {
+function runEscenario16(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
         const page = await browser.newPage();
-        await page.goto('http://localhost:2368/ghost/#/dashboard');
+        await page.goto(url);
         await new Promise(r => setTimeout(r, 5000));
 
         // Tamaño de la pantalla
