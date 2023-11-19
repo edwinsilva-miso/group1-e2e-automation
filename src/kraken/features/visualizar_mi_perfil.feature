@@ -1,6 +1,6 @@
 Feature: Pruebas ghost
   @user1 @web
-  Scenario: Modificar locacion del adminstrador
+  Scenario: Visualizar mi perfil
     Given I navigate to page "<GHOST_URL>"
     And I wait for 1 seconds
     When I enter email "<ADMIN_EMAIL>"

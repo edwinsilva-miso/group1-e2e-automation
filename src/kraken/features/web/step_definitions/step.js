@@ -737,7 +737,7 @@ When("I click to see my profile", async function () {
 });
 
 When("I click to see my profile v4", async function () {
-  let element = await this.driver.$('#ember73');
+  let element = await this.driver.$('/html/body/div[1]/div/ul/li[4]/a');
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });

@@ -1,6 +1,6 @@
 Feature: Pruebas ghost
   @user1 @web
-  Scenario: Modificar locacion del adminstrador v4
+  Scenario: Visualizar mi perfil v4
     Given I navigate to page "<GHOST_URLV4>"
     And I wait for 1 seconds
     When I enter email v4 "<ADMIN_EMAIL>"

@@ -9,18 +9,64 @@ const tests = [
   {
     // Name of the scenario folder where the screenshots are located for the old version
     OLD_VERSION_FOLDER:
-      "Como primer usuario inicio sesion y creo un tag publico-exitoso",
+      "Visualizar mi perfil v4",
     // Name of the scenario folder where the screenshots are located for the latest version
-    LASTEST_VERSION_FOLDER: "Crear borrador de post",
+    LASTEST_VERSION_FOLDER: "Visualizar mi perfil",
     // Name of the scenario
-    SCENARIO_NAME: "Test1",
+    SCENARIO_NAME: "(1) - Visualizar mi perfil",
   },
   {
-    OLD_VERSION_FOLDER: "Crear un miembro exitoso",
+    OLD_VERSION_FOLDER: "Visualizar post v4",
+    LASTEST_VERSION_FOLDER: "Visualizar post",
+    SCENARIO_NAME: "(2) - Visualizar post",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear tag publico exitoso v4",
+    LASTEST_VERSION_FOLDER: "Crear tag publico exitoso",
+    SCENARIO_NAME: "(3) - Crear tag publico exitoso",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear tag interno existoso v4",
+    LASTEST_VERSION_FOLDER: "Crear tag interno existoso",
+    SCENARIO_NAME: "(4) - Crear tag interno existoso",
+  },
+  {
+    OLD_VERSION_FOLDER: "Programar publicación de post v4",
+    LASTEST_VERSION_FOLDER: "Programar publicación de post",
+    SCENARIO_NAME: "(5) - Programar publicación de post",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear un Tag fallido (No se llena el formulario) v4",
     LASTEST_VERSION_FOLDER: "Crear un Tag fallido (No se llena el formulario)",
-    SCENARIO_NAME: "Test2",
+    SCENARIO_NAME: "(6) - Crear un Tag fallido (No se llena el formulario)",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear un Tag exitoso (Con meta-data) v4",
+    LASTEST_VERSION_FOLDER: "Crear un Tag exitoso (Con meta-data)",
+    SCENARIO_NAME: "(7) - Crear un Tag exitoso (Con meta-data)",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear página con publicación programada v4",
+    LASTEST_VERSION_FOLDER: "Crear página con publicación programada",
+    SCENARIO_NAME: "(8) - Crear página con publicación programada",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear página con publicación al instante v4",
+    LASTEST_VERSION_FOLDER: "Crear página con publicación al instante",
+    SCENARIO_NAME: "(9) - Crear página con publicación al instante",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear un miembro exitoso v4",
+    LASTEST_VERSION_FOLDER: "Crear un miembro exitoso",
+    SCENARIO_NAME: "(10) - Crear un miembro exitoso",
+  },
+  {
+    OLD_VERSION_FOLDER: "Crear borrador de post v4",
+    LASTEST_VERSION_FOLDER: "Crear borrador de post",
+    SCENARIO_NAME: "(11) - Crear borrador de post",
   },
 ];
+
 
 // Function to count the number of files in a directory
 function countFiles(dir) {
@@ -36,8 +82,10 @@ function countFiles(dir) {
 async function executeTest() {
   let resultInfo = {};
   let datetime = new Date().toISOString().replace(/:/g, ".");
+  let j = 0;
   //Iterate over the tests
   for (let test of tests) {
+    j++;
     const firstTestPath = `${screenShotsPath}/${test.OLD_VERSION_FOLDER}`;
     const secondTestPath = `${screenShotsPath}/${test.LASTEST_VERSION_FOLDER}`;
 
@@ -60,6 +108,7 @@ async function executeTest() {
       fs.writeFileSync(`${directoryPath}/compare-${i}.png`, data.getBuffer());
 
       resultInfo[test.SCENARIO_NAME][i] = {
+        scenarioPosition: j,
         isSameDimensions: data.isSameDimensions,
         dimensionDifference: data.dimensionDifference,
         rawMisMatchPercentage: data.rawMisMatchPercentage,
@@ -111,15 +160,16 @@ function test(b, steps) {
   return `  
 <div class=" browser" id="test0">
   <div class=" btitle">
-      <h2>Scenario: ${b}</h2>
+      <h2 id="amber${steps[1].scenarioPosition}">Escenario ${b}</h2>
   </div>
-  <div id="visualizer">
-              ${Object.keys(steps).map((b) => step(b, steps[b]))}
-          </div>
-  
+  <div id="visualizer">${Object.keys(steps).map((b) => step(b, steps[b]))}</div>
 </div>`;
 }
 
+function createLiElements(b, steps) {
+  return `<li><a href="#amber${steps[1].scenarioPosition}">${b}</a></li>`;
+
+}
 function createReport(datetime, resInfo) {
   return `
   <html>
@@ -128,15 +178,27 @@ function createReport(datetime, resInfo) {
           <link href="index.css" type="text/css" rel="stylesheet">
       </head>
       <body>
-          <h1>Report for 
-               Ghost VRT 
+      <div id="seccion-izquierda">
+          <h1>Reporte de 
+               Ghost VRT con ResembleJs
           </h1>
-          <p>Executed: ${datetime}</p>
+          <p>Fecha de ejecución: ${datetime}</p>
+
+          <div id="tableOfContents">
+        <h2>Escenarios presentes</h2>
+        <ul>           
+            ${Object.keys(resInfo).map((b) => createLiElements(b, resInfo[b]))}
+        </ul>
+    </div>       
+    </div>   
+    <div id="seccion-derecha">
           <div id="visualizer">
               ${Object.keys(resInfo).map((b) => test(b, resInfo[b]))}
+          </div>
           </div>
       </body>
   </html>`;
 }
 
 (async () => console.log(await executeTest()))();
+
