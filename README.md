@@ -61,7 +61,19 @@
 
     ![image](https://github.com/edwinsilva-miso/group1-e2e-automation/assets/139934363/310e2e6f-835b-4a6b-8998-dc9c82d387d3)
 
+### Generación de reporte con Resemble: 
 
+1. Haber realizado previamente los pasos de: Instalación y ejecución de pruebas con Kraken 
+2. Estar ubicado en la siguiente ruta de trabajo  ./group1-e2e-automation/src/kraken
+3. Ejecutar el siguiente comando en la terminal:
+   ```
+   npm run resemble-report
+   ```
+5. Se creará una carpeta con nombre de la fecha actual en la siguiente ubicación .\group1-e2e-automation\src\kraken\vrt\results
+6. Abrimos la capreta con la fecha más reciento y por último abrimos el archivo report.html. Allí encontraremos el análisis compartivo entre las dos versiones de ghost (5.7 vs 4.44)
+   
+    NOTA: Se seleccionó la versión 4.44 con el fin de no encontrar grandes diferencias en las interfaces provista por las versiones de Ghost y presentar casos donde se consevaran una baja diferencia pero a su vez otros con alta desiguladad. 
+   
 
 ## Instalación y ejecución de pruebas con Puppeteer
 ### Prerequisitos:
