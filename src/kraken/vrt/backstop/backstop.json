@@ -3,8 +3,8 @@
   "viewports": [
     {
       "label": "default",
-      "width": 800,
-      "height": 600
+      "width": 1628,
+      "height": 720
     }
   ],
   "onBeforeScript": "puppet/onBefore.js",
@@ -12,6 +12,7 @@
   "scenarios": [
     {
       "label": "Visualizar Post",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "url": "http://localhost:3002/ghost/#/posts",
       "referenceUrl": "http://localhost:2368/ghost/#/posts",
       "readyEvent": "",
@@ -20,22 +21,88 @@
       "hideSelectors": [],
       "removeSelectors": [],
       "hoverSelector": "",
-      "keyPressSelectors": [
-        {
-          "selector": "input#ember7",
-          "keyPress": "john@doe.com"
-        },
-        {
-          "selector": "input#ember9",
-          "keyPress": "Asdf1234$%"
-        }
-      ],
-      "clickSelector": "button#ember11",
+      "clickSelector": "",
       "postInteractionWait": 6000,
       "selectors": [],
       "selectorExpansion": true,
       "expect": 0,
-      "misMatchThreshold" : 8,
+      "misMatchThreshold": 8,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Visualizar Post Programados",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://localhost:3002/ghost/#/posts?type=scheduled",
+      "referenceUrl": "http://localhost:2368/ghost/#/posts?type=scheduled",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 6000,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 8,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Tags Internos",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://localhost:3002/ghost/#/tags",
+      "referenceUrl": "http://localhost:2368/ghost/#/tags",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "button.gh-btn",
+      "postInteractionWait": 6000,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 8,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Perfil",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://localhost:3002/ghost/#/settings/staff",
+      "referenceUrl": "http://localhost:2368/ghost/#/settings/staff",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 6000,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 8,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Miembros",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://localhost:3002/ghost/#/members",
+      "referenceUrl": "http://localhost:2368/ghost/#/members",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 6000,
+      "selectors": [],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 8,
       "requireSameDimensions": true
     }
   ],

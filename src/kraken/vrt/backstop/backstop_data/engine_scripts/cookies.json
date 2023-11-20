@@ -1,14 +1,12 @@
 [
   {
-    "domain": ".www.yourdomain.com",
-    "path": "/",
-    "name": "yourCookieName",
-    "value": "yourCookieValue",
-    "expirationDate": 1798790400,
-    "hostOnly": false,
-    "httpOnly": false,
+    "name": "ghost-admin-api-session",
+    "value": "s%3A2shJw--rhRdiPsh9JqhhDQTLyWAJMXy-.3hySm1gYUoldt38qm1%2Fe48%2FeemuQbeGsm7IB89xVLGg",
+    "domain": "localhost",
+    "path": "/ghost",
+    "expires": 1716207699.209561,
+    "httpOnly": true,
     "secure": false,
-    "session": false,
     "sameSite": "Lax"
   }
 ]
