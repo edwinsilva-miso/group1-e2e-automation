@@ -73,7 +73,58 @@
 6. Abrimos la capreta con la fecha más reciento y por último abrimos el archivo report.html. Allí encontraremos el análisis compartivo entre las dos versiones de ghost (5.7 vs 4.44)
    
     NOTA: Se optó por la versión 4.44 con el objetivo de analizar las interfaces proporcionadas por las diversas versiones de Ghost. La elección de esta versión se basó en la intención de identificar tanto casos en los que las diferencias fueran mínimas, conservando una baja disparidad, como situaciones en las que se observara una divergencia significativa.
-   
+
+### Generación de reporte con BackstopJS
+
+#### Pre-requisitos
+
+Es necesario realizar las siguientes acciones antes de realizar la ejecución de VRT (Es necesario el uso del navegador Google Chrome):
+
+1. Tener instalado backstopjs en su máquina.
+2. Instalar el plugin para [descargar cookies del navegador](https://chrome.google.com/webstore/detail/cookie-inspector/jgbbilmfbammlbbhmmgaagdkbkepnijn?hl=en).
+3. Iniciar sesión en la ABP (Ghost) en el navegador Google Chrome.
+4. Usar el plugin para descargar las cookies en el home de Ghost.
+5. Ajustar el archivo `group1-e2e-automation/src/kraken/vrt/backstop/backstop_data/engine_scripts/cookies.json` con la información de cookies previamente descargada.
+
+   ```json
+   [
+     {
+       "name": "ghost-admin-api-session",
+       "value": "s%3A2shJw--rhRdiPsh9JqhhDQTLyWAJMXy-.3hySm1gYUoldt38qm1%2Fe48%2FeemuQbeGsm7IB89xVLGg",
+       "domain": "localhost",
+       "path": "/ghost",
+       "expires": 1716207699.209561,
+       "httpOnly": true,
+       "secure": false,
+       "sameSite": "Lax"
+     }
+   ]
+   ```
+
+
+#### Ejecución
+
+Para la generación del reporte HTML de VRT con BackstopJS, es necesario ejecutar lo siguiente:
+
+1. Haber realizado previamente los pasos de: Instalación y ejecución de pruebas con Kraken
+2. Ubicarse en el siguiente directorio:
+   ```shell
+   $ cd group1-e2e-automation/src/kraken/vrt/backstop
+   ```	
+3. Ejecutar el siguiente comando
+   ```shell
+   $ backstop test
+   ```
+5. Posterior a este paso, ejecutar el comando
+   ```shell
+   $ backstop approve
+   ```
+7. Finalmente, volver a ejecutar el comando
+   ```shell
+   $ backstop test
+   ```
+9. Esto generará el reporte HTML en la ruta `group1-e2e-automation/src/kraken/vrt/backstop/backstop_data/html_report/index.html`
+    ![Reporte HTML Backstop](https://github.com/edwinsilva-miso/group1-e2e-automation/assets/142602650/9cb21999-60ac-4355-9eb3-cbdf1e338a23)
 
 ## Instalación y ejecución de pruebas con Puppeteer
 ### Prerequisitos:
