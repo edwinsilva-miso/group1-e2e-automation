@@ -165,6 +165,10 @@ Ahi debera cambiar las credenciales de inicio de sesion por las registradas en s
 ```
 node index.js
 ```
+Para ejecutar las pruebas realizadas en la version Anterior:
+```
+node indexOld.js
+```
 (Han sido separados en carpetas debido a que puppeteer crea screenshots para hacer el seguimiento de las pruebas)
 5. Revisar en la consola y los screenshots los escenarios ejecutados.
 
