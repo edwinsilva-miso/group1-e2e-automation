@@ -1,28 +1,27 @@
 Feature: Pruebas ghost
 
   @user1 @web
-  Scenario: Crear página con publicación al instante
+  Scenario: Crear un pagina exitoso (Con meta description error - cantidad excedida +145)
     Given I navigate to page "<GHOST_URL>"
-    And I wait for 1 seconds
+    And I wait for 5 seconds
     When I enter email "<ADMIN_EMAIL>"
     And I enter password "<ADMIN_PASSWORD>"
     And I click sign in
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I click to pages button
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I click new page
-    And I wait for 1 seconds
+    And I wait for 2 seconds
     And I add a page title
     And I wait for 1 seconds
     And I add a page text
     And I wait for 1 seconds
-    And I click publish button
+    And I click setting button
     And I wait for 1 seconds
-    And I click continue button
+    And I click meta data option
     And I wait for 1 seconds
-    And I click publish page right now
+    And I add a meta title
     And I wait for 1 seconds
-    And I click back to editor
+    And I add a long meta description
     And I wait for 1 seconds
-    And I click to pages button
-    And I wait for 1 seconds
+    Then I see a meta description message error
