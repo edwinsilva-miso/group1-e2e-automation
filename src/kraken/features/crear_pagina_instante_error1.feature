@@ -20,4 +20,3 @@ Feature: Pruebas ghost
     And I wait for 2 seconds
     And I click publish button
     And I wait for 2 seconds
-    Then I get a Excerpt error

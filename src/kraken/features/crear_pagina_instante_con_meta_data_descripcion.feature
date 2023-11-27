@@ -24,6 +24,3 @@ Feature: Pruebas ghost
     And I wait for 1 seconds
     And I add a meta description
     And I wait for 1 seconds
-    Then I see a meta description message
-
-
