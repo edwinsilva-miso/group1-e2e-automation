@@ -431,6 +431,14 @@ function executeEscenario45(user, pass, url) {
     });
 }
 
+function executeEscenario46(user, pass, url) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(runEscenario46(user, pass, url));
+        }, 2000);
+    });
+}
+
 function executeEscenario47(user, pass, url) {
     return new Promise(resolve => {
         setTimeout(() => {
