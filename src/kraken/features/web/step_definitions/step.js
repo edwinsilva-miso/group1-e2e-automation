@@ -1,7 +1,7 @@
 const { Given, When, Then, Before } = require("@cucumber/cucumber");
 const expect = require("chai").expect;
 const fs = require("fs");
-const { faker } = require('@faker-js/faker');
+const { faker } = require("@faker-js/faker");
 
 let screenshotCount = 1;
 let scenarioName;
@@ -326,33 +326,47 @@ When("I click new page", async function () {
 });
 
 When("I add a page title", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[2]/textarea');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[2]/textarea"
+  );
   return await element.setValue(faker.company.name()).then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 When("I add a page text", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[3]/div/div/div[1]/div/p');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[3]/div/div/div[1]/div/p"
+  );
   element.click();
-  let element2 = await this.driver.$('/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[3]/div/div/div[1]/div/p');
-  return await element2.setValue(faker.company.catchPhraseDescriptor()).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element2 = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[3]/div/div/div[1]/div/p"
+  );
+  return await element2
+    .setValue(faker.company.catchPhraseDescriptor())
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 When("I add a long page text", async function () {
   let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
   element.click();
   let element2 = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
-  return await element2.setValue("Lorem Ipsum is simply dummy text of the printing and typesetting industry").then(() => {
-    return takeScreenshot(this.driver);
-  });
+  return await element2
+    .setValue(
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
+    )
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 When("I click publish button", async function () {
   //let element = await this.driver.$('//span[text()="Publish"]');
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/section/header/section/button[2]/span');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/section/header/section/button[2]/span"
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -519,7 +533,6 @@ When("I click save v4", async function () {
   });
 });
 
-
 Then("I get error message", async function () {
   return await this.driver
     .$('span[data-test-task-button-state="failure"]')
@@ -635,14 +648,18 @@ When("I add x description", async function () {
 });
 
 When("I add a tag header", async function () {
-  let element = await this.driver.$("#tag-setting-codeinjection-head > div > div.CodeMirror-scroll");
+  let element = await this.driver.$(
+    "#tag-setting-codeinjection-head > div > div.CodeMirror-scroll"
+  );
   return await element.setValue("<p>Header de un tag</p>").then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 When("I add a tag footer", async function () {
-  let element = await this.driver.$("#tag-setting-codeinjection-foot > div > div.CodeMirror-scroll");
+  let element = await this.driver.$(
+    "#tag-setting-codeinjection-foot > div > div.CodeMirror-scroll"
+  );
   return await element.setValue("<p>Footer de un tag</p>").then(() => {
     return takeScreenshot(this.driver);
   });
@@ -662,7 +679,6 @@ When("I click over notification", async function () {
   });
 });
 
-
 When("I click uploader image", async function () {
   let element = await this.driver.$(".gh-image-uploader-unsplash");
   return await element.click().then(() => {
@@ -671,7 +687,9 @@ When("I click uploader image", async function () {
 });
 
 When("I click first picture", async function () {
-  let element = await this.driver.$("#unsplash-selector-wormhole > div.absolute.top-8.right-8.bottom-8.left-8.br4.overflow-hidden.bg-white.z-9999 > div.flex.flex-column.h-100 > div > div > section > div:nth-child(1) > a:nth-child(1) > div > div > div.gh-unsplash-photo-footer > a");
+  let element = await this.driver.$(
+    "#unsplash-selector-wormhole > div.absolute.top-8.right-8.bottom-8.left-8.br4.overflow-hidden.bg-white.z-9999 > div.flex.flex-column.h-100 > div > div > section > div:nth-child(1) > a:nth-child(1) > div > div > div.gh-unsplash-photo-footer > a"
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -685,7 +703,9 @@ When("I click setting button", async function () {
 });
 
 When("I click dropdown list page access", async function () {
-  let element = await this.driver.$('select[data-test-select="post-visibility"]');
+  let element = await this.driver.$(
+    'select[data-test-select="post-visibility"]'
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -729,7 +749,6 @@ When("I click mobile preview button", async function () {
   });
 });
 
-
 When("I click to see my profile", async function () {
   let element = await this.driver.$('a[data-test-nav="user-profile"]');
   return await element.click().then(() => {
@@ -738,7 +757,7 @@ When("I click to see my profile", async function () {
 });
 
 When("I click to see my profile v4", async function () {
-  let element = await this.driver.$('/html/body/div[1]/div/ul/li[4]/a');
+  let element = await this.driver.$("/html/body/div[1]/div/ul/li[4]/a");
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
@@ -757,10 +776,10 @@ When("I click done button", async function () {
   });
 });
 
-
 When(/^I enter a location to my profile (.*)$/, async function (location) {
-
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[1]/div/input"
+  );
 
   return await element.clearValue().then(() => {
     return element.setValue(location);
@@ -784,16 +803,17 @@ When("I click save & close", async function () {
 });
 
 When(/^I enter a website to my profile (.*)$/, async function (website) {
-
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/input"
+  );
 
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
 
-    return await element.setValue(website);
+  return await element.setValue(website);
 });
 
 Then(/^I see that the website is correct (.*)$/, async function (message) {
@@ -807,25 +827,28 @@ Then(/^I see that the website is correct (.*)$/, async function (message) {
 
 Then(/^I see that the website is not correct (.*)$/, async function (message) {
   let text = await this.driver.$(
-    '#admin-x-settings > div:nth-child(1) > div > div'
+    "#admin-x-settings > div:nth-child(1) > div > div"
   );
 
   expect(text).to.not.equal(null);
 });
 
 When(/^I enter a name to my profile (.*)$/, async function (name) {
-
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[1]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[1]/div/input"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(name);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(name);
 });
 
 Then(/^I see that the name is correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[1]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[1]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
@@ -833,95 +856,113 @@ Then(/^I see that the name is correct (.*)$/, async function (message) {
 });
 
 When(/^I enter a email to my profile (.*)$/, async function (email) {
-
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[2]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[2]/div/input"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(email);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(email);
 });
 
 Then(/^I see that the email is not correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[2]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[2]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
   expect(text).to.contain(message);
 });
 
-
 When(/^I enter a url facebook to my profile (.*)$/, async function (url) {
-
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[3]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[3]/div/input"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(url);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(url);
 });
 
 Then(/^I see that the url facebook is correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[3]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[3]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
   expect(text).to.contain(message);
 });
 
-Then(/^I see that the url facebook is not correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[3]/span");
+Then(
+  /^I see that the url facebook is not correct (.*)$/,
+  async function (message) {
+    let element = await this.driver.$(
+      "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[3]/span"
+    );
 
-  let text = await element.getText();
-  expect(element).to.not.equal(null);
-  expect(text).to.contain(message);
-});
-
-
+    let text = await element.getText();
+    expect(element).to.not.equal(null);
+    expect(text).to.contain(message);
+  }
+);
 
 When(/^I enter a url twitter to my profile (.*)$/, async function (url) {
-
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[4]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[4]/div/input"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(url);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(url);
 });
 
 Then(/^I see that the url twitter is correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[4]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[4]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
   expect(text).to.contain(message);
 });
 
-Then(/^I see that the url twitter is not correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[4]/span");
+Then(
+  /^I see that the url twitter is not correct (.*)$/,
+  async function (message) {
+    let element = await this.driver.$(
+      "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[4]/span"
+    );
 
-  let text = await element.getText();
-  expect(element).to.not.equal(null);
-  expect(text).to.contain(message);
-});
-
-
+    let text = await element.getText();
+    expect(element).to.not.equal(null);
+    expect(text).to.contain(message);
+  }
+);
 
 When(/^I enter a bio to my profile (.*)$/, async function (bio) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[5]/textarea');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[5]/textarea"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(bio);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(bio);
 });
 
 Then(/^I see that the bio is correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[5]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[5]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
@@ -929,26 +970,31 @@ Then(/^I see that the bio is correct (.*)$/, async function (message) {
 });
 
 Then(/^I see that the bio is not correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[5]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[2]/div[1]/div[2]/div[5]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
   expect(text).to.contain(message);
 });
 
-
 When(/^I enter a slug to my profile (.*)$/, async function (bio) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[3]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[3]/div/input"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(bio);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(bio);
 });
 
 Then(/^I see that the slug is correct (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[3]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[1]/div[2]/div[3]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
@@ -956,36 +1002,46 @@ Then(/^I see that the slug is correct (.*)$/, async function (message) {
 });
 
 When("I click change password", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/button/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/button/span"
+  );
   return element.click().then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
-
-
 When(/^I enter a old password to my profile (.*)$/, async function (password) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[2]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[2]/div/input"
+  );
   return await element.setValue(password).then(() => {
     return takeScreenshot(this.driver);
   });
 });
 When(/^I enter a new password to my profile (.*)$/, async function (password) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[3]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[3]/div/input"
+  );
   return await element.setValue(password).then(() => {
     return takeScreenshot(this.driver);
   });
 });
-When(/^I enter a verify password to my profile (.*)$/, async function (password) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[4]/div/input');
-  return await element.setValue(password).then(() => {
-    return takeScreenshot(this.driver);
-  });
-});
-
+When(
+  /^I enter a verify password to my profile (.*)$/,
+  async function (password) {
+    let element = await this.driver.$(
+      "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[4]/div/input"
+    );
+    return await element.setValue(password).then(() => {
+      return takeScreenshot(this.driver);
+    });
+  }
+);
 
 Then(/^I see an error 1 password message (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[2]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[2]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
@@ -993,7 +1049,9 @@ Then(/^I see an error 1 password message (.*)$/, async function (message) {
 });
 
 Then(/^I see an error 2 password message (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[3]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[3]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
@@ -1001,7 +1059,9 @@ Then(/^I see an error 2 password message (.*)$/, async function (message) {
 });
 
 Then(/^I see an error 3 password message (.*)$/, async function (message) {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[4]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[4]/span"
+  );
 
   let text = await element.getText();
   expect(element).to.not.equal(null);
@@ -1009,7 +1069,9 @@ Then(/^I see an error 3 password message (.*)$/, async function (message) {
 });
 
 Then("I see a visual error password message", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[1]/div/div/div");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[1]/div/div/div"
+  );
 
   expect(element).to.not.equal(null);
 });
@@ -1022,173 +1084,484 @@ When("I click general setting button", async function () {
 });
 
 When("I click edit title and description", async function () {
-  var element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div/button/span');
+  var element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div/button/span"
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 When(/^I enter a title for general setting (.*)$/, async function (title) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[1]/div/input');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[1]/div/input"
+  );
   const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
-    }
-    return await element.setValue(title);
+  if (oldValue) {
+    const backspaces = new Array(oldValue.length).fill("Backspace");
+    await element.setValue(backspaces);
+  }
+  return await element.setValue(title);
 });
 
-When(/^I enter a description for general setting (.*)$/, async function (title) {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[2]/div/input');
-  const oldValue = await element.getValue();
-    if(oldValue) {
-        const backspaces = new Array(oldValue.length).fill("Backspace");
-        await element.setValue(backspaces);
+When(
+  /^I enter a description for general setting (.*)$/,
+  async function (title) {
+    let element = await this.driver.$(
+      "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[2]/div/input"
+    );
+    const oldValue = await element.getValue();
+    if (oldValue) {
+      const backspaces = new Array(oldValue.length).fill("Backspace");
+      await element.setValue(backspaces);
     }
     return await element.setValue(title);
-});
+  }
+);
 
 When("I click save title and description changes", async function () {
-  var element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div/button[2]/span');
+  var element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div/button[2]/span"
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 Then("I see a title and description was updated", async function () {
-  let titleElement = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[1]/div");
-  let descripcionElement = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[2]/div");
+  let titleElement = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[1]/div"
+  );
+  let descripcionElement = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[3]/div[2]/div"
+  );
   expect(titleElement).to.not.equal(null);
   expect(descripcionElement).to.not.equal(null);
 });
 
 Then("save button is not updated", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div/button[2]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[3]/div[2]/div/div[1]/div/div[1]/div[2]/div[2]/div/button[2]/span"
+  );
   let text = await element.getText();
   expect(element).to.not.equal(null);
   expect(text).equal("Save");
 });
 
 When("I add a long page title", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[2]/textarea');
-  return await element.setValue(faker.datatype.string({ length: 300 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/section/div[1]/div[1]/div[2]/textarea"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 300 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 Then("I get a title error", async function () {
   let element = await this.driver.$("/html/body/div[2]/aside/article/div");
   let text = await element.getText();
   expect(element).to.not.equal(null);
-  expect(text).equal("Validation failed: Title cannot be longer than 255 characters.");
+  expect(text).equal(
+    "Validation failed: Title cannot be longer than 255 characters."
+  );
 });
 
 Then("I get a Excerpt error", async function () {
   let element = await this.driver.$("/html/body/div[2]/aside/article/div");
   let text = await element.getText();
   expect(element).to.not.equal(null);
-  expect(text).equal("Validation failed: Excerpt cannot be longer than 300 characters.");
+  expect(text).equal(
+    "Validation failed: Excerpt cannot be longer than 300 characters."
+  );
 });
-
 
 When("I add text in Excerpt", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/section/div[5]/textarea');
-  return await element.setValue(faker.datatype.string({ length: 150 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/section/div[5]/textarea"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 150 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
-
 When("I add a long text in Excerpt", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/section/div[5]/textarea');
-  return await element.setValue(faker.datatype.string({ length: 301 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/section/div[5]/textarea"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 301 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 When("I click code injection option", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/ul/li[4]/button');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/ul/li[4]/button"
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 When("I add a tag header 2", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/div/div/div[6]/div[1]/div/div/div/div[5]/div/pre");
-  return await element.setValue(faker.datatype.string({ length: 150 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/div/div/div[6]/div[1]/div/div/div/div[5]/div/pre"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 150 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 When("I add a tag footer 2", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/div/div/div[6]/div[1]/div/div/div/div[5]/div/pre");
-  return await element.setValue(faker.datatype.string({ length: 150 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/div/div/div[6]/div[1]/div/div/div/div[5]/div/pre"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 150 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 When("I click meta data option", async function () {
-  let element = await this.driver.$('/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/ul/li[5]/button/span');
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div/div[2]/form/ul/li[5]/button/span"
+  );
   return await element.click().then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 When("I add a meta title", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/input");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/input"
+  );
   return await element.setValue(faker.animal.dog()).then(() => {
     return takeScreenshot(this.driver);
   });
 });
 
 When("I add a long meta title", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/input");
-  return await element.setValue(faker.datatype.string({ length: 61 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/input"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 61 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 Then("I get a meta title error", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/p[1]");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[1]/p[1]"
+  );
   let text = await element.getText();
   expect(element).to.not.equal(null);
   expect(text).equal("Recommended: 60 characters. You’ve used 61");
 });
 
 When("I add a meta description", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/textarea");
-  return await element.setValue(faker.datatype.string({ length: 61 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/textarea"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 61 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 When("I add a long meta description", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/textarea");
-  return await element.setValue(faker.datatype.string({ length: 146 })).then(() => {
-    return takeScreenshot(this.driver);
-  });
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/textarea"
+  );
+  return await element
+    .setValue(faker.datatype.string({ length: 146 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
 });
 
 Then("I see a meta description message", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]");
-  let numberElement = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]"
+  );
+  let numberElement = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]/span"
+  );
   let text = await element.getText();
-  let colorProperty = await numberElement.getCSSProperty('color');
+  let colorProperty = await numberElement.getCSSProperty("color");
   let colorValue = colorProperty.parsed.hex;
   expect(element).to.not.equal(null);
   expect(text).equal("Recommended: 145 characters. You’ve used 61");
-  expect(colorValue).equals("#e25440")
+  expect(colorValue).equals("#e25440");
 });
 
 Then("I see a meta description message error", async function () {
-  let element = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]");
-  let numberElement = await this.driver.$("/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]/span");
+  let element = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]"
+  );
+  let numberElement = await this.driver.$(
+    "/html/body/div[2]/div/main/div[1]/div/div/div[2]/div/div[2]/form/div[2]/p[1]/span"
+  );
   let text = await element.getText();
-  let colorProperty = await numberElement.getCSSProperty('color');
+  let colorProperty = await numberElement.getCSSProperty("color");
   let colorValue = colorProperty.parsed.hex;
 
   expect(element).to.not.equal(null);
   expect(text).equal("Recommended: 145 characters. You’ve used 146");
-  expect(colorValue).equals("#30cf43")
+  expect(colorValue).equals("#30cf43");
 });
 
+When("I click x data option", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div > div.settings-menu-content > form > ul > li:nth-child(6) > button"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a x title", async function () {
+  let element = await this.driver.$("//*[@id='twitter-title']");
+  return await element.setValue(faker.internet.userName()).then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a long x title", async function () {
+  let element = await this.driver.$("//*[@id='twitter-title']");
+  return await element
+    .setValue(faker.datatype.string({ length: 301 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
+});
+
+When("I click x description input", async function () {
+  let element = await this.driver.$("#twitter-description");
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I get a x title error", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div.settings-menu.settings-menu-pane.settings-menu-pane-wide > div > div.settings-menu-content > form > div.form-group.error > p"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("Twitter Title cannot be longer than 300 characters.");
+});
+
+When("I add a x description", async function () {
+  let element = await this.driver.$("#twitter-description");
+  return await element.setValue(faker.lorem.paragraph()).then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a long x description", async function () {
+  let element = await this.driver.$("#twitter-description");
+  return await element
+    .setValue(faker.datatype.string({ length: 501 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
+});
+
+Then("I get a x description error", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div.settings-menu.settings-menu-pane.settings-menu-pane-wide > div > div.settings-menu-content > form > div.form-group.error > p"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal(
+    "Twitter Description cannot be longer than 500 characters."
+  );
+});
+
+When("I click facebook data option", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div > div.settings-menu-content > form > ul > li:nth-child(7) > button"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a facebook title", async function () {
+  let element = await this.driver.$("//*[@id='og-title']");
+  return await element.setValue(faker.internet.userName()).then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a long facebook title", async function () {
+  let element = await this.driver.$("//*[@id='og-title']");
+  return await element
+    .setValue(faker.datatype.string({ length: 301 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
+});
+
+When("I click facebook description input", async function () {
+  let element = await this.driver.$("#og-description");
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I get a facebook title error", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div.settings-menu.settings-menu-pane.settings-menu-pane-wide > div > div.settings-menu-content > form > div.form-group.error > p"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("Facebook Title cannot be longer than 300 characters.");
+});
+
+When("I add a facebook description", async function () {
+  let element = await this.driver.$("#og-description");
+  return await element.setValue(faker.lorem.paragraph()).then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I add a long facebook description", async function () {
+  let element = await this.driver.$("#og-description");
+  return await element
+    .setValue(faker.datatype.string({ length: 501 }))
+    .then(() => {
+      return takeScreenshot(this.driver);
+    });
+});
+
+Then("I get a facebook description error", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div.settings-menu.settings-menu-pane.settings-menu-pane-wide > div > div.settings-menu-content > form > div.form-group.error > p"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal(
+    "Facebook Description cannot be longer than 500 characters."
+  );
+});
+
+Then("I get an author required error", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div > div.settings-menu-content > form > section > div.form-group.for-select.mb8.error > p"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("At least one author is required.");
+});
+
+When("I remove author", async function () {
+  let element = await this.driver.$(
+    'span[class="ember-power-select-multiple-remove-btn"]'
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click publish time option", async function () {
+  let element = await this.driver.$(
+    'button[class="gh-publish-setting-title "]'
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click schedule option", async function () {
+  let element = await this.driver.$('div[class="gh-radio "]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click publish continue button", async function () {
+  let element = await this.driver.$(
+    'button[class="gh-btn gh-btn-black gh-btn-large"]'
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click publish scheduled page button", async function () {
+  let element = await this.driver.$(
+    'button[class="gh-btn gh-btn-large gh-btn-pulse ember-view"]'
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I see the page is scheduled", async function () {
+  let element = await this.driver.$('span[class="green"]');
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("All set!");
+});
+
+When("I go back to pages", async function () {
+  let element = await this.driver.$('a[href="#/pages/"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I enter the last page", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > main > section > section > div.posts-list.gh-list.feature-memberAttribution > div:nth-child(1)"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I see the page is published", async function () {
+  let element = await this.driver.$('span[class="green"]');
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("Boom. It’s out there.");
+});
+
+When("I click delete page button", async function () {
+  let element = await this.driver.$(
+    "#entry-controls > div > div.settings-menu-content > div > button"
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click delete page confirm button", async function () {
+  let element = await this.driver.$(
+    'button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]'
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I see i was redirected to pages", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > main > section > div > header > div > h2"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("Pages");
+});
