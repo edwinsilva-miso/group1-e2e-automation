@@ -9,7 +9,7 @@ const url = urlGhostNew;
 
 (async () => {
     return executeEscenario1(username, password, url)
-    /*.then(() => executeEscenario2(username, password, url))
+    .then(() => executeEscenario2(username, password, url))
     .then(() => executeEscenario3(username, password, url))
     .then(() => executeEscenario4(username, password, url))
     .then(() => executeEscenario5(username, password, url))
@@ -59,7 +59,7 @@ const url = urlGhostNew;
     .then(() => executeEscenario49(username, password, url))
     .then(() => executeEscenario50(username, password, url))
     .then(() => executeEscenario51(username, password, url))
-    .then(() => executeEscenario52(username, password, url))*/
+    .then(() => executeEscenario52(username, password, url))
     .then(() => executeEscenario53(username, password, url))
     .then(() => executeEscenario54(username, password, url))
     .then(() => executeEscenario55(username, password, url))
