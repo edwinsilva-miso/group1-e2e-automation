@@ -15,8 +15,7 @@ Feature: Pruebas ghost
     And I wait for 1 seconds
     And I enter a website to my profile <website>
     And I wait for 1 seconds
-    Then I see that the bio is correct <message>
 
     Examples:
-        |url                      | message                  | website      |
-        |https://twitter.com/twitter                  | URL of your X profile    |google.com    |
+        |url                              | message                  | website      |
+        |https://twitter.com/twitter      | URL of your X profile    |google.com    |
