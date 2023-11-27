@@ -136,8 +136,8 @@ Para la generación del reporte HTML de VRT con BackstopJS, es necesario ejecuta
 1. Clonar el repositorio de forma local
 2. Ir a la carpeta de trabajo  ./group1-e2e-automation/src/puppeteer
 3. Instalar Puppeteer con: 
-```
-npm install puppeteers 
+```shell
+npm install puppeteer
 ```
 (Si es necesario hacer downgrade de la version de node installar nvm y utilizar "nvm use 18" para volver a la version 18 de node)
 4. Ir a los directorios ubicados dentro de: 
@@ -168,6 +168,10 @@ node index.js
 Para ejecutar las pruebas realizadas en la version Anterior:
 ```
 node indexOld.js
+```
+Para ejecutar las pruebas realizadas con generación aleatoria de datos:
+```
+node indexAllEscenaries.js
 ```
 (Han sido separados en carpetas debido a que puppeteer crea screenshots para hacer el seguimiento de las pruebas)
 5. Revisar en la consola y los screenshots los escenarios ejecutados.
