@@ -1565,3 +1565,41 @@ Then("I see i was redirected to pages", async function () {
   expect(element).to.not.equal(null);
   expect(text).equal("Pages");
 });
+
+When("I click unpublish page button", async function () {
+  let element = await this.driver.$(
+    'button[class="gh-btn gh-btn-editor darkgrey gh-unpublish-trigger"]'
+  );
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+When("I click unpublish page confirm button", async function () {
+  let element = await this.driver.$('button[class="gh-revert-to-draft"]');
+  return await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
+
+Then("I should get a notification of the unpublished page", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > aside > article > div.gh-notification-content > span"
+  );
+  let text = await element.getText();
+  expect(element).to.not.equal(null);
+  expect(text).equal("Page successfully reverted to a draft.");
+});
+
+When("I filter by published pages", async function () {
+  let element = await this.driver.$(
+    "body > div.gh-app > div > main > section > div > header > section > div > div.gh-contentfilter-menu.gh-contentfilter-type"
+  );
+  await element.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+  let element2 = await this.driver.$("li[data-option-index='2']");
+  return await element2.click().then(() => {
+    return takeScreenshot(this.driver);
+  });
+});
