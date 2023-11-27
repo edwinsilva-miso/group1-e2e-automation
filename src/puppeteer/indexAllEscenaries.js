@@ -1,70 +1,73 @@
 export * from './config.js';
 import { password, urlGhostNew, urlGhostOld, username } from './config.js';
-import { runEscenario1, runEscenario2, runEscenario3, runEscenario4, runEscenario5, runEscenario6, runEscenario7, runEscenario8, runEscenario9, runEscenario10, runEscenario11, runEscenario12, runEscenario13, runEscenario14,runEscenario15, runEscenario16, runEscenario17, runEscenario18, runEscenario19, runEscenario20, runEscenario21,runEscenario22,runEscenario23,runEscenario24,runEscenario25,runEscenario26,runEscenario27 } from './testTagsFaker/testTagsFaker.js';
+import { runEscenario1, runEscenario2, runEscenario3, runEscenario4, runEscenario5, runEscenario6, runEscenario7, runEscenario8, runEscenario9, runEscenario10, runEscenario11, runEscenario12, runEscenario13, runEscenario14, runEscenario15, runEscenario16, runEscenario17, runEscenario18, runEscenario19, runEscenario20, runEscenario21, runEscenario22, runEscenario23, runEscenario24, runEscenario25, runEscenario26, runEscenario27 } from './testTagsFaker/testTagsFaker.js';
 import { runEscenario28, runEscenario29, runEscenario30, runEscenario31, runEscenario32, runEscenario33 } from './testMemberFaker/testMemberFaker.js';
-import { runEscenario34, runEscenario35, runEscenario36, runEscenario37, runEscenario38, runEscenario39, runEscenario40, runEscenario41, runEscenario42, runEscenario43, runEscenario44, runEscenario45, runEscenario46, runEscenario47, runEscenario48, runEscenario49, runEscenario50, runEscenario51, runEscenario52, runEscenario53  } from './testPostsFaker/testPostsFaker.js';
-import { runEscenario54, runEscenario55, runEscenario56, runEscenario57 } from './testPagesFaker/testPagesFaker.js';
+import { runEscenario34, runEscenario35, runEscenario36, runEscenario37, runEscenario38, runEscenario39, runEscenario40, runEscenario41, runEscenario42, runEscenario43, runEscenario44, runEscenario45, runEscenario46, runEscenario47, runEscenario48, runEscenario49, runEscenario50, runEscenario51, runEscenario52, runEscenario53 } from './testPostsFaker/testPostsFaker.js';
+import { runEscenario54, runEscenario55, runEscenario56, runEscenario57, runEscenario58, runEscenario59, runEscenario60 } from './testPagesFaker/testPagesFaker.js';
 
 const url = urlGhostNew;
 
 (async () => {
     return executeEscenario1(username, password, url)
-    .then(() => executeEscenario2(username, password, url))
-    .then(() => executeEscenario3(username, password, url))
-    .then(() => executeEscenario4(username, password, url))
-    .then(() => executeEscenario5(username, password, url))
-    .then(() => executeEscenario6(username, password, url))
-    .then(() => executeEscenario7(username, password, url))
-    .then(() => executeEscenario8(username, password, url))
-    .then(() => executeEscenario9(username, password, url))
-    .then(() => executeEscenario10(username, password, url))
-    .then(() => executeEscenario11(username, password, url))
-    .then(() => executeEscenario12(username, password, url))
-    .then(() => executeEscenario13(username, password, url))
-    .then(() => executeEscenario14(username, password, url))
-    .then(() => executeEscenario15(username, password, url))
-    .then(() => executeEscenario16(username, password, url))
-    .then(() => executeEscenario17(username, password, url))
-    .then(() => executeEscenario18(username, password, url))
-    .then(() => executeEscenario19(username, password, url))
-    .then(() => executeEscenario20(username, password, url))
-    .then(() => executeEscenario21(username, password, url))
-    .then(() => executeEscenario22(username, password, url))
-    .then(() => executeEscenario23(username, password, url))
-    .then(() => executeEscenario24(username, password, url))
-    .then(() => executeEscenario25(username, password, url))
-    .then(() => executeEscenario26(username, password, url))
-    .then(() => executeEscenario27(username, password, url))
-    .then(() => executeEscenario28(username, password, url))
-    .then(() => executeEscenario29(username, password, url))
-    .then(() => executeEscenario30(username, password, url))
-    .then(() => executeEscenario31(username, password, url))
-    .then(() => executeEscenario32(username, password, url))
-    .then(() => executeEscenario33(username, password, url))
-    .then(() => executeEscenario34(username, password, url))
-    .then(() => executeEscenario35(username, password, url))
-    .then(() => executeEscenario36(username, password, url))
-    .then(() => executeEscenario37(username, password, url))
-    .then(() => executeEscenario38(username, password, url))
-    .then(() => executeEscenario39(username, password, url))
-    .then(() => executeEscenario40(username, password, url))
-    .then(() => executeEscenario41(username, password, url))
-    .then(() => executeEscenario42(username, password, url))
-    .then(() => executeEscenario43(username, password, url))
-    .then(() => executeEscenario44(username, password, url))
-    .then(() => executeEscenario45(username, password, url))
-    .then(() => executeEscenario46(username, password, url))
-    .then(() => executeEscenario47(username, password, url))
-    .then(() => executeEscenario48(username, password, url))
-    .then(() => executeEscenario49(username, password, url))
-    .then(() => executeEscenario50(username, password, url))
-    .then(() => executeEscenario51(username, password, url))
-    .then(() => executeEscenario52(username, password, url))
-    .then(() => executeEscenario53(username, password, url))
-    .then(() => executeEscenario54(username, password, url))
-    .then(() => executeEscenario55(username, password, url))
-    .then(() => executeEscenario56(username, password, url))
-    .then(() => executeEscenario57(username, password, url))
+        .then(() => executeEscenario2(username, password, url))
+        .then(() => executeEscenario3(username, password, url))
+        .then(() => executeEscenario4(username, password, url))
+        .then(() => executeEscenario5(username, password, url))
+        .then(() => executeEscenario6(username, password, url))
+        .then(() => executeEscenario7(username, password, url))
+        .then(() => executeEscenario8(username, password, url))
+        .then(() => executeEscenario9(username, password, url))
+        .then(() => executeEscenario10(username, password, url))
+        .then(() => executeEscenario11(username, password, url))
+        .then(() => executeEscenario12(username, password, url))
+        .then(() => executeEscenario13(username, password, url))
+        .then(() => executeEscenario14(username, password, url))
+        .then(() => executeEscenario15(username, password, url))
+        .then(() => executeEscenario16(username, password, url))
+        .then(() => executeEscenario17(username, password, url))
+        .then(() => executeEscenario18(username, password, url))
+        .then(() => executeEscenario19(username, password, url))
+        .then(() => executeEscenario20(username, password, url))
+        .then(() => executeEscenario21(username, password, url))
+        .then(() => executeEscenario22(username, password, url))
+        .then(() => executeEscenario23(username, password, url))
+        .then(() => executeEscenario24(username, password, url))
+        .then(() => executeEscenario25(username, password, url))
+        .then(() => executeEscenario26(username, password, url))
+        .then(() => executeEscenario27(username, password, url))
+        .then(() => executeEscenario28(username, password, url))
+        .then(() => executeEscenario29(username, password, url))
+        .then(() => executeEscenario30(username, password, url))
+        .then(() => executeEscenario31(username, password, url))
+        .then(() => executeEscenario32(username, password, url))
+        .then(() => executeEscenario33(username, password, url))
+        .then(() => executeEscenario34(username, password, url))
+        .then(() => executeEscenario35(username, password, url))
+        .then(() => executeEscenario36(username, password, url))
+        .then(() => executeEscenario37(username, password, url))
+        .then(() => executeEscenario38(username, password, url))
+        .then(() => executeEscenario39(username, password, url))
+        .then(() => executeEscenario40(username, password, url))
+        .then(() => executeEscenario41(username, password, url))
+        .then(() => executeEscenario42(username, password, url))
+        .then(() => executeEscenario43(username, password, url))
+        .then(() => executeEscenario44(username, password, url))
+        .then(() => executeEscenario45(username, password, url))
+        .then(() => executeEscenario46(username, password, url))
+        .then(() => executeEscenario47(username, password, url))
+        .then(() => executeEscenario48(username, password, url))
+        .then(() => executeEscenario49(username, password, url))
+        .then(() => executeEscenario50(username, password, url))
+        .then(() => executeEscenario51(username, password, url))
+        .then(() => executeEscenario52(username, password, url))
+        .then(() => executeEscenario53(username, password, url))
+        .then(() => executeEscenario54(username, password, url))
+        .then(() => executeEscenario55(username, password, url))
+        .then(() => executeEscenario56(username, password, url))
+        .then(() => executeEscenario57(username, password, url))
+        .then(() => executeEscenario58(username, password, url))
+        .then(() => executeEscenario59(username, password, url))
+        .then(() => executeEscenario60(username, password, url));
     ;
 })().catch(e => console.log(e));
 
@@ -512,6 +515,30 @@ function executeEscenario57(user, pass, url) {
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(runEscenario57(user, pass, url));
+        }, 2000);
+    });
+}
+
+function executeEscenario58(user, pass, url) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(runEscenario58(user, pass, url));
+        }, 2000);
+    });
+}
+
+function executeEscenario59(user, pass, url) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(runEscenario59(user, pass, url));
+        }, 2000);
+    });
+}
+
+function executeEscenario60(user, pass, url) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(runEscenario60(user, pass, url));
         }, 2000);
     });
 }

@@ -1,4 +1,4 @@
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import puppeteer from 'puppeteer';
 import path from 'path';
 
@@ -35,7 +35,7 @@ export function runEscenario54(user, pass, url) {
         await page.type('div.kg-prose', faker.lorem.paragraph(5));
 
         // Creando pages
-        await page.screenshot({ path: './testPagesFaker/escenario54.png' });
+        await page.screenshot({ path: './testPagesFaker/escenario34.png' });
         await page.click('button[data-test-button="publish-flow"]');
         await page.click('button[data-test-button="continue"]');
         await page.click('button[data-test-button="confirm-publish"]');
@@ -202,6 +202,181 @@ export function runEscenario57(user, pass, url) {
         await page.screenshot({ path: './testPagesFaker/escenario57_1.png' });
 
         console.log('Test Eliminacion Publicacion Done');
+        await browser.close();
+
+        return;
+    })().catch(e => console.log(e));
+}
+
+// Scenario 58 - Create a pages changing URL
+export function runEscenario58(user, pass, url) {
+    (async () => {
+        const browser = await puppeteer.launch({ headless: "new" });
+
+        const page = await browser.newPage();
+        await page.goto(url);
+        await new Promise(r => setTimeout(r, 5000));
+
+        // Tamaño de la pantalla
+        await page.setViewport({ width: 1920, height: 1080 });
+
+        // Llenar informacion
+        await page.type('input[id="identification"]', user);
+        await page.type('input[id="password"]', pass);
+        await page.click('button[id="ember5"]')
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Entrar Pages
+        await page.click('a[href="#/pages/"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        await page.click('a[href="#/editor/page/"]');
+        await page.type('textarea[data-test-editor-title-input]', faker.lorem.text());
+        await page.type('div.kg-prose', faker.lorem.sentences());
+
+        // Expand menus
+        await page.click('button[data-test-psm-trigger]');
+        await new Promise(r => setTimeout(r, 2000));
+
+        // Write excerpt
+        await page.type('input[id="url"]', faker.lorem.word());
+        await new Promise(r => setTimeout(r, 2000));
+
+        await page.click('button[data-test-button="publish-flow"]');
+        await page.click('button[data-test-button="continue"]');
+        await page.click('button[data-test-button="confirm-publish"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Volver al inicio
+        await page.click('button[data-test-button="close-publish-flow"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Crear post (Escenario 13)
+        await page.click('a[data-test-link="pages"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Captura post Creado
+        await page.screenshot({ path: './testPagesFaker/scenario58.png' });
+
+        // End test
+        console.log('Create a pages changing URL');
+        await browser.close();
+
+        return;
+    })().catch(e => console.log(e));
+}
+
+// Scenario 59 - Create a page with extra-long URL
+export function runEscenario59(user, pass, url) {
+    (async () => {
+        const browser = await puppeteer.launch({ headless: "new" });
+
+        const page = await browser.newPage();
+        await page.goto(url);
+        await new Promise(r => setTimeout(r, 5000));
+
+        // Tamaño de la pantalla
+        await page.setViewport({ width: 1920, height: 1080 });
+
+        // Llenar informacion
+        await page.type('input[id="identification"]', user);
+        await page.type('input[id="password"]', pass);
+        await page.click('button[id="ember5"]')
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Entrar Pages
+        await page.click('a[href="#/pages/"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        await page.click('a[href="#/editor/page/"]');
+        await page.type('textarea[data-test-editor-title-input]', faker.lorem.text());
+        await page.type('div.kg-prose', faker.lorem.sentences());
+
+        // Expand menus
+        await page.click('button[data-test-psm-trigger]');
+        await new Promise(r => setTimeout(r, 2000));
+
+        // Write url with 1000 characters
+        await page.type('input[id="url"]', faker.lorem.word(1000));
+        await new Promise(r => setTimeout(r, 2000));
+
+        await page.click('button[data-test-button="publish-flow"]');
+        await page.click('button[data-test-button="continue"]');
+        await page.click('button[data-test-button="confirm-publish"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Volver al inicio
+        await page.click('button[data-test-button="close-publish-flow"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Crear post (Escenario 13)
+        await page.click('a[data-test-link="pages"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Captura post Creado
+        await page.screenshot({ path: './testPosts/scenario59.png' });
+
+        // End test
+        console.log('Test Create a page with extra-long URL');
+        await browser.close();
+
+        return;
+    })().catch(e => console.log(e));
+}
+
+// Scenario 60 - Create a page with excerpt
+export function runEscenario60(user, pass, url) {
+    (async () => {
+        const browser = await puppeteer.launch({ headless: "new" });
+
+        const page = await browser.newPage();
+        await page.goto(url);
+        await new Promise(r => setTimeout(r, 5000));
+
+        // Tamaño de la pantalla
+        await page.setViewport({ width: 1920, height: 1080 });
+
+        // Llenar informacion
+        await page.type('input[id="identification"]', user);
+        await page.type('input[id="password"]', pass);
+        await page.click('button[id="ember5"]')
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Entrar Pages
+        await page.click('a[href="#/pages/"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        await page.click('a[href="#/editor/page/"]');
+        await page.type('textarea[data-test-editor-title-input]', faker.lorem.text());
+        await page.type('div.kg-prose', faker.lorem.sentences());
+
+        // Expand menus
+        await page.click('button[data-test-psm-trigger]');
+        await new Promise(r => setTimeout(r, 2000));
+
+        // Write excerpt
+        await page.type('textarea[id="custom-excerpt"]', faker.lorem.sentences());
+        await new Promise(r => setTimeout(r, 2000));
+
+        // Confirm post
+        await page.click('button[data-test-button="publish-flow"]');
+        await page.click('button[data-test-button="continue"]');
+        await page.click('button[data-test-button="confirm-publish"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Go back posts
+        await page.click('button[data-test-button="close-publish-flow"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Create post
+        await page.click('a[data-test-link="pages"]');
+        await new Promise(r => setTimeout(r, 7000));
+
+        // Screenshot
+        await page.screenshot({ path: './testPosts/scenario60.png' });
+
+        // End test
+        console.log('Test Create a page with excerpt');
         await browser.close();
 
         return;
