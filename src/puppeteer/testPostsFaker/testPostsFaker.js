@@ -91,7 +91,7 @@ export function runEscenario35(user, pass, url) {
 }
 
 // Scenario 36 - Create post draft
-export function runEscenario34(user, pass, url) {
+export function runEscenario36(user, pass, url) {
     (async () => {
         const browser = await puppeteer.launch({ headless: "new" });
 
