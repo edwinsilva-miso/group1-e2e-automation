@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import faker from '@fakerjs'
+import { faker } from '@faker-js/faker';
 
 // Scenario 34 - Create new post
 export function runEscenario34(user, pass, url) {
