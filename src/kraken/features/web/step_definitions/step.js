@@ -1724,3 +1724,38 @@ Then(/^I see that the new slug is correct (.*)$/, async function (message) {
   
   await ProfilePage.slugCorrect(this.driver, message)
 });
+
+When("I click change the password", async function () {
+
+  await ProfilePage.changePassword(this.driver);
+});
+
+When(/^I enter the old password to my profile (.*)$/, async function (password) {
+
+  await ProfilePage.changeOldPassword(this.driver, password);
+});
+
+When(/^I enter the new password to my profile (.*)$/, async function (password) {
+
+  await ProfilePage.newPassword(this.driver, password);
+});
+
+When(/^I enter a verify the password to my profile (.*)$/,async function (password) {
+
+  await ProfilePage.verifyPassword(this.driver, password);
+});
+
+Then(/^I see one error 1 password message (.*)$/, async function (message) {
+
+  await ProfilePage.getErrorMessageOne(this.driver, message)
+});
+
+Then(/^I see an error 2 password message (.*)$/, async function (message) {
+
+  await ProfilePage.getErrorMessageTwo(this.driver, message);
+});
+
+Then(/^I see an error 3 password message (.*)$/, async function (message) {
+
+  await ProfilePage.getErrorMessageThree(this.driver, message);
+});
