@@ -13,7 +13,7 @@ Feature: Pruebas ghost
     And I wait for 1 seconds
     And I enter a location to my profile <location>
     And I wait for 1 seconds
-    Then I see that the location is correct <message>
+    Then I see that the new location is correct <message>
 
     Examples:
         |location               | message                       |
