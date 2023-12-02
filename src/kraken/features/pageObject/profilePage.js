@@ -209,6 +209,68 @@ class ProfilePage {
         expect(element).to.not.equal(null);
         expect(text).to.contain(message);
       }
+
+      async changePassword (driver) {
+
+        let element = await driver.$(
+          "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/button/span"
+        );
+        element.click();;
+      }
+      
+      async changeOldPassword (driver, password) {
+
+        let element = await driver.$(
+          "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[2]/div/input"
+        );
+        await element.setValue(password);;
+      }
+
+      async newPassword (driver, password) {
+        
+        let element = await driver.$(
+          "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[3]/div/input"
+        );
+        await element.setValue(password);
+      }
+      
+      async verifyPassword (driver, password) {
+          let element = await driver.$(
+            "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[4]/div/input"
+          );
+          return await element.setValue(password);
+        }
+      
+      async getErrorMessageOne (driver, message) {
+        let element = await driver.$(
+          "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[2]/span"
+        );
+      
+        let text = await element.getText();
+        expect(element).to.not.equal(null);
+        expect(text).to.contain(message);
+      }
+      
+      async getErrorMessageTwo (driver, message) {
+        
+        let element = await driver.$(
+          "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[3]/span"
+        );
+      
+        let text = await element.getText();
+        expect(element).to.not.equal(null);
+        expect(text).to.contain(message);
+      }
+      
+      async getErrorMessageThree (driver, message) {
+        let element = await driver.$(
+          "/html/body/div[2]/div/main/div[1]/div/div/div[4]/section/div[1]/div/div[2]/div[4]/div[4]/span"
+        );
+      
+        let text = await element.getText();
+        expect(element).to.not.equal(null);
+        expect(text).to.contain(message);
+      }
   }
 
   module.exports = new ProfilePage();
