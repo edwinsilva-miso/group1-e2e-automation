@@ -1,7 +1,10 @@
 const { Given, When, Then, Before } = require("@cucumber/cucumber");
+const LoginPage = require('../../pageObject/loginPage');
+const MainPage = require('../../pageObject/mainPage');
+const ProfilePage = require('../../pageObject/profilePage');
 const expect = require("chai").expect;
 const fs = require("fs");
-const { faker } = require("@faker-js/faker");
+const { faker, ur } = require("@faker-js/faker");
 
 let screenshotCount = 1;
 let scenarioName;
@@ -1602,4 +1605,122 @@ When("I filter by published pages", async function () {
   return await element2.click().then(() => {
     return takeScreenshot(this.driver);
   });
+});
+
+
+When("I enter email and password POM {kraken-string} {kraken-string}", async function (email, password) {
+
+  await LoginPage.enterCredentials(this.driver, email, password);
+  await LoginPage.clickSignIn(this.driver);
+});
+
+When("I enter to profile POM", async function () {
+
+  await MainPage.clickUserMenu(this.driver);
+  await MainPage.clickMyProfile(this.driver);
+});
+
+When(/^I enter a new location to my profile POM (.*)$/, async function (location) {
+
+  await ProfilePage.enterLocation(this.driver, location);
+});
+
+Then(/^I see that the new location is correct POM (.*)$/, async function (message) {
+
+  await ProfilePage.checkLocation(this.driver, message);
+});
+
+When("I click save & close button", async function () {
+
+  await ProfilePage.clickSaveAndClose(this.driver)
+});
+
+When(/^I enter a new website to my profile POM (.*)$/, async function (website) {
+
+  await ProfilePage.enterWebsite(this.driver, website);
+});
+
+Then(/^I see that the new website is correct (.*)$/, async function (message) {
+  
+  await ProfilePage.checkWebsite(this.driver, message)
+});
+
+Then(/^I see that the new website is not correct POM (.*)$/, async function (message) {
+  
+  await ProfilePage.checkWebsiteNotCorrect(this.driver, message)
+});
+
+When(/^I enter a new name to my profile POM (.*)$/, async function (name) {
+  
+  await ProfilePage.enterName(this.driver, name);
+});
+
+Then(/^I see that the new name is correct POM (.*)$/, async function (message) {
+  
+  await ProfilePage.checkName(this.driver, message);
+});
+
+When(/^I enter a new email to my profile POM (.*)$/, async function (email) {
+  
+  await ProfilePage.enterEmail(this.driver, email);
+});
+
+Then(/^I see that the new email is not correct POM (.*)$/, async function (message) {
+
+  await ProfilePage.checkEmail(this.driver, message);
+});
+
+When(/^I enter a new url facebook to my profile (.*)$/, async function (url) {
+
+  await ProfilePage.enterFaceookUrl(this.driver, url)
+});
+
+Then(/^I see that the new url facebook is correct (.*)$/, async function (message) {
+
+  await ProfilePage.checkFacebookUrl(this.driver, message)
+});
+
+Then(/^I see that the new url facebook is not correct (.*)$/, async function (message) {
+
+  await ProfilePage.checkFacebookUrlIsNotCorrect(this.driver, message)
+});
+
+When(/^I enter a new url twitter to my profile (.*)$/, async function (url) {
+  
+  await ProfilePage.enterTwitter(this.driver, url);
+});
+
+Then(/^I see that the new url twitter is correct (.*)$/, async function (message) {
+
+  await ProfilePage.checkTwitterUrl(this.driver, message);
+});
+
+Then(/^I see that the new url twitter is not correct (.*)$/,async function (message) {
+
+  await ProfilePage.checkTwitterUrlIsNotCorrect(this.driver, message)
+});
+
+When(/^I enter a new bio to my profile (.*)$/, async function (bio) {
+
+  await ProfilePage.enterBio(this.driver, bio)
+});
+
+Then(/^I see that the new bio is correct (.*)$/, async function (message) {
+
+  await ProfilePage.checkBio(this.driver, message)
+});
+
+Then(/^I see that the new bio is not correct (.*)$/, async function (message) {
+
+  await ProfilePage.checkBioIsNotCorrect(this.driver, message)
+});
+
+When(/^I enter a new slug to my profile (.*)$/, async function (slug) {
+
+  await ProfilePage.enterSlug(this.driver, slug)
+});
+
+Then(/^I see that the new slug is correct (.*)$/, async function (message) {
+  
+  await ProfilePage.slugCorrect(this.driver, message)
 });
