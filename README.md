@@ -70,7 +70,7 @@
    npm run resemble-report
    ```
 5. Se creará una carpeta con nombre de la fecha actual en la siguiente ubicación .\group1-e2e-automation\src\kraken\vrt\results
-6. Abrimos la capreta con la fecha más reciento y por último abrimos el archivo report.html. Allí encontraremos el análisis compartivo entre las dos versiones de ghost (5.7 vs 4.44)
+6. Abrimos la capreta con la fecha más reciento y por último abrimos el archivo report.html. Allí encontraremos el análisis compartivo entre las dos versiones de ghost (5.74.0 vs 4.44)
    
     NOTA: Se optó por la versión 4.44 con el objetivo de analizar las interfaces proporcionadas por las diversas versiones de Ghost. La elección de esta versión se basó en la intención de identificar tanto casos en los que las diferencias fueran mínimas, conservando una baja disparidad, como situaciones en las que se observara una divergencia significativa.
 
