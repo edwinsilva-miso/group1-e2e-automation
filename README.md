@@ -138,6 +138,7 @@ Para la generación del reporte HTML de VRT con BackstopJS, es necesario ejecuta
 3. Instalar Puppeteer con: 
 ```shell
 npm install puppeteer
+npm install
 ```
 (Si es necesario hacer downgrade de la version de node installar nvm y utilizar "nvm use 18" para volver a la version 18 de node)
 4. Ir a los directorios ubicados dentro de: 
